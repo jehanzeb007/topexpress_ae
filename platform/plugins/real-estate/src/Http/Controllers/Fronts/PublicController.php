@@ -38,13 +38,6 @@ class PublicController extends BaseController
             $link = null;
             $subject = null;
 
-
-            if ($receiverEmailsSetting = setting('receiver_emails', '')) {
-                $sendTo = trim($receiverEmailsSetting);
-            }
-
-
-
             if ($request->input('type') == 'project') {
                 $request->merge(['project_id' => $request->input('data_id')]);
                 $project = $projectRepository->findById($request->input('data_id'));
@@ -60,7 +53,11 @@ class PublicController extends BaseController
                     $subject = $property->name;
 
                     if ($property->author->email) {
+<<<<<<< HEAD
                         $sendTo = $sendTo.','.$property->author->email;
+=======
+                        $sendTo = $property->author->email;
+>>>>>>> parent of 1091190 (working on)
                     }
                 }
             }
@@ -68,12 +65,6 @@ class PublicController extends BaseController
             $ipAddress = $request->ip();
 
             $consult = Consult::query()->create(array_merge($request->input(), ['ip_address' => $ipAddress]));
-
-            if ($sendTo) {
-                $sendTo = collect(json_decode($sendTo, true))
-                    ->pluck('value')
-                    ->all();
-            }
 
             EmailHandler::setModule(REAL_ESTATE_MODULE_SCREEN_NAME)
                 ->setVariableValues([
