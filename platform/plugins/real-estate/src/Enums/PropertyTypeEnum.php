@@ -16,7 +16,7 @@ class PropertyTypeEnum extends Enum
 
     public const RENT = 'rent';
 
-    public const OFFPLAN = 'off plan';
+    public const OFFPLAN = 'offplan';
 
     public static $langPath = 'plugins/real-estate::property.types';
 
@@ -25,6 +25,7 @@ class PropertyTypeEnum extends Enum
         $color = match ($this->value) {
             self::SALE => 'success',
             self::RENT => 'info',
+            self::OFFPLAN => 'primary',
             default => 'primary',
         };
 
