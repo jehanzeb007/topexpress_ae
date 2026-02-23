@@ -3,7 +3,7 @@
     "source": "envato",
     "apiUrl": "",
     "apiKey": "EC3610AE9706B1510B0A",
-    "version": "3.4.1",
+    "version": "0.0.1",
     "marketplaceUrl": "",
     "marketplaceToken": "7ab0826a9b36e6e85315babf77b3366cf30ebdaa",
     "minimumPhpVersion": "8.0.2"

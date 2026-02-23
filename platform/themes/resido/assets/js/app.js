@@ -521,14 +521,14 @@ $(function () {
                 {
                     breakpoint: 1024,
                     settings: {
-                        arrows: false,
+                        arrows: true,
                         slidesToShow: 2
                     }
                 },
                 {
                     breakpoint: 600,
                     settings: {
-                        arrows: false,
+                        arrows: true,
                         slidesToShow: 1
                     }
                 }
