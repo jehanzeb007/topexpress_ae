@@ -53,7 +53,11 @@ class PublicController extends BaseController
                     $subject = $property->name;
 
                     if ($property->author->email) {
+<<<<<<< HEAD
+                        $sendTo = $sendTo.','.$property->author->email;
+=======
                         $sendTo = $property->author->email;
+>>>>>>> parent of 1091190 (working on)
                     }
                 }
             }
