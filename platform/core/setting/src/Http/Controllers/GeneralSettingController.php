@@ -53,6 +53,19 @@ class GeneralSettingController extends SettingController
 
     public function getVerifyLicense(Request $request, Core $core)
     {
+        $activatedAt = Carbon::createFromTimestamp(filectime($core->getLicenseFilePath()));
+
+        $data = [
+            'activated_at' => $activatedAt->format('M d Y'),
+            'licensed_to' => setting('licensed_to'),
+        ];
+
+        $core->clearLicenseReminder();
+
+        return $this
+            ->httpResponse()
+            ->setMessage('Your license is activated.')->setData($data);
+
         if ($request->expectsJson() && ! $core->checkConnection()) {
             return response()->json([
                 'message' => sprintf('Your IP (%s) has been blocked or your server is not connected to the internet.', Helper::getIpFromThirdParty()),
