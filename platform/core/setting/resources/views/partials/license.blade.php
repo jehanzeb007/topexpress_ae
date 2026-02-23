@@ -29,26 +29,26 @@
 
     <template v-if="initialized && verified">
         @if(! config('core.base.general.hide_activated_license_info', false))
-            <x-core-setting::section
-                :title="$licenseTitle"
-                :description="$licenseDescription"
-            >
-                <p class="text-info">
-                <span v-if="license.licensed_to">Licensed to <span v-text="license.licensed_to"></span>.
-                </span>Activated
-                    since <span v-text="license.activated_at"></span>.
-                </p>
+{{--            <x-core-setting::section--}}
+{{--                :title="$licenseTitle"--}}
+{{--                :description="$licenseDescription"--}}
+{{--            >--}}
+{{--                <p class="text-info">--}}
+{{--                <span v-if="license.licensed_to">Licensed to <span v-text="license.licensed_to"></span>.--}}
+{{--                </span>Activated--}}
+{{--                    since <span v-text="license.activated_at"></span>.--}}
+{{--                </p>--}}
 
-                <div>
-                    <x-core::button
-                        color="warning"
-                        @click="deactivateLicense"
-                        :disabled="!$manageLicense"
-                    >
-                        Deactivate license
-                    </x-core::button>
-                </div>
-            </x-core-setting::section>
+{{--                <div>--}}
+{{--                    <x-core::button--}}
+{{--                        color="warning"--}}
+{{--                        @click="deactivateLicense"--}}
+{{--                        :disabled="!$manageLicense"--}}
+{{--                    >--}}
+{{--                        Deactivate license--}}
+{{--                    </x-core::button>--}}
+{{--                </div>--}}
+{{--            </x-core-setting::section>--}}
         @endif
     </template>
 </v-license-form>
