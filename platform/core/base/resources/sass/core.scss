@@ -1,6 +1,17 @@
 $prefix: 'bb-' !default;
 $enable-negative-margins: true;
 
+// Load Tabler functions first
+@import "@tabler/core/src/scss/functions";
+
+// Load Tabler variables
+@import "@tabler/core/src/scss/variables";
+
+// Load Tabler config
+@import "@tabler/core/src/scss/config";
+
+
+
 @import 'partials/core';
 @import 'partials/image-picker';
 @import 'partials/flags';
