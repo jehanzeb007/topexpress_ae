@@ -1,24 +1,6 @@
 $prefix: 'bb-' !default;
 $enable-negative-margins: true;
 
-// 1️⃣ Load Bootstrap functions first
-@import "bootstrap/scss/functions";
-
-// 2️⃣ Load Tabler functions
-@import "@tabler/core/src/scss/functions";
-
-// 3️⃣ Load Bootstrap variables
-@import "bootstrap/scss/variables";
-
-// 4️⃣ Load Tabler variables
-@import "@tabler/core/src/scss/variables";
-
-// 5️⃣ Load Tabler config
-@import "@tabler/core/src/scss/config";
-
-// 6️⃣ Load full Tabler core
-@import "@tabler/core/src/scss/core";
-
 @import 'partials/core';
 @import 'partials/image-picker';
 @import 'partials/flags';
