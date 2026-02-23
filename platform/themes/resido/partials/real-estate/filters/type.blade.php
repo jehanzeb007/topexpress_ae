@@ -5,15 +5,15 @@
 
 @if (count($types))
     @php
-        $type_choice = request()->input('type', PropertyTypeEnum::RENT());
+        $type_choice = request()->input('type', PropertyTypeEnum::SALE());
     @endphp
-    <ul>
+    <div class="d-flex flex-wrap gap-2">
         @foreach ($types as $key => $type)
-            <li>
-                <input id="cp-{{ $key }}" value="{{ $key }}" class="checkbox-custom" name="type"
-                    type="radio" @if ($type_choice == $key) checked @endif>
-                <label for="cp-{{ $key }}" class="checkbox-custom-label">{{ $type }}</label>
-            </li>
+            <div class="form-check form-check-inline">
+                <input class="btn-check d-none" type="radio" name="type" id="cp-{{ $key }}" value="{{ $key }}"
+                       @if ($type_choice == $key) checked @endif autocomplete="off">
+                <label class="btn btn-outline-success" for="cp-{{ $key }}">{{ $type }}</label>
+            </div>
         @endforeach
-    </ul>
+    </div>
 @endif
