@@ -43,11 +43,11 @@ class SettingSeeder extends BaseSeeder
             ],
             [
                 'key' => 'payment_stripe_client_id',
-                'value' => 'pk_test_51JGbXaLmHOfJnFasFfg5ksgorTTlnnqt8RzdrT1qIjqg5sGcVK3fNWBZu1OZ84ndCI4fo0Bdm7TL1yLfiC6e7nF700hBjwxbKa',
+                'value' => '',
             ],
             [
                 'key' => 'payment_stripe_secret',
-                'value' => 'sk_test_51JGbXaLmHOfJnFasntP9rqE8wZ0qghWeMKcdlQphvMNo7C2sVaTFgRcjlnof8XVBRZspgVk7ctO62QlY10E8rHNT002pnOk3VI',
+                'value' => '',
             ],
             [
                 'key' => 'payment_stripe_status',
@@ -63,11 +63,11 @@ class SettingSeeder extends BaseSeeder
             ],
             [
                 'key' => 'payment_paypal_client_id',
-                'value' => 'AZlbcwqaPAMIZ27JGOMRYrkWlMdvylKDgoNwS6rzww4_Q2naixJ9KwoOgDdhkwXBro7yTxKOV1hADDMO',
+                'value' => '',
             ],
             [
                 'key' => 'payment_paypal_secret',
-                'value' => 'EG7289O15aSq5bT_XLY0VhA0slkme6rlKTBp0Z1KyGY-cJoq7kPIxAvDbpVd8npd_-jBHcnYuMjF9CV3',
+                'value' => '',
             ],
             [
                 'key' => 'payment_paypal_status',
