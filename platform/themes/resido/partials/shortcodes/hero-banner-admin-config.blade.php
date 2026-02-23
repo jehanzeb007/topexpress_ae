@@ -17,7 +17,7 @@
 <div class="form-group mb-3">
     <label class="control-label">{{ __('Style') }}</label>
     <select name="style" class="form-control">
-        @foreach([1,2,3,4,5,6,10] as $i)
+        @foreach([1,2,3,4,5,6,7,10] as $i)
             <option value="{{ $i }}" @if (Arr::get($attributes, 'style') == $i) selected @endif>{{ $i }}</option>
         @endforeach
     </select>
