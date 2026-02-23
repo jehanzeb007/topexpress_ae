@@ -13,7 +13,7 @@
     <select name="type" id="type" class="form-control">
         <option value="" @if (Arr::get($attributes, 'type') == "") selected @endif>{{ __('-----') }}</option>
         @foreach($types as $key => $type)
-            <option value="{{ $type->id }}" @if (Arr::get($attributes, 'type') == $type->slug) selected @endif>{{ $type->name }}</option>
+            <option value="{{ $key }}" @if (Arr::get($attributes, 'type') == $key) selected @endif>{{ $type }}</option>
         @endforeach
     </select>
 </div>
