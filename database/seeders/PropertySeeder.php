@@ -272,7 +272,7 @@ class PropertySeeder extends BaseSeeder
             $item['price'] = $faker->numberBetween(5000, 500000);
             $item['currency_id'] = 1;
             $item['never_expired'] = 1;
-            $item['type'] = $faker->randomElement([PropertyTypeEnum::RENT(), PropertyTypeEnum::SALE()]);
+            $item['type'] = $faker->randomElement([PropertyTypeEnum::RENT(), PropertyTypeEnum::SALE(), PropertyTypeEnum::OFFPLAN()]);
             $item['city_id'] = $faker->numberBetween(1, 6);
             $item['moderation_status'] = ModerationStatusEnum::APPROVED;
             $item['latitude'] = isset($item['coordinates']) ? $item['coordinates']['lat'] : $faker->latitude;
