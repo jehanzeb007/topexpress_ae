@@ -16,6 +16,8 @@ class PropertyTypeEnum extends Enum
 
     public const RENT = 'rent';
 
+    public const OFFPLAN = 'off plan';
+
     public static $langPath = 'plugins/real-estate::property.types';
 
     public function toHtml(): HtmlString|string|null
