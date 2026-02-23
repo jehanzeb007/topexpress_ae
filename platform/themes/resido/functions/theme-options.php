@@ -64,6 +64,21 @@ app()->booted(function () {
             ],
         ])
         ->setField([
+            'id' => 'whatsapp',
+            'section_id' => 'opt-text-subsection-general',
+            'type' => 'text',
+            'label' => __('Whatsapp'),
+            'attributes' => [
+                'name' => 'whatsapp',
+                'value' => null,
+                'options' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Hotline',
+                    'data-counter' => 30,
+                ],
+            ],
+        ])
+        ->setField([
             'id' => 'address',
             'section_id' => 'opt-text-subsection-general',
             'type' => 'text',
