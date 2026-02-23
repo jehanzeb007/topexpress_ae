@@ -69,7 +69,7 @@
     <!-- ============================================================== -->
     <!-- Top header  -->
 
-    <div class="topbar bg-brand p-2 d-none d-sm-block d-none">
+    <div class="topbar bg-brand p-2 d-none">
         <div class="container">
             <div class="d-flex align-items-center justify-content-between">
                 @if (is_plugin_active('language'))
