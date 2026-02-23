@@ -16,7 +16,7 @@
 
             let html = `<div class="alert ${messageType} alert-dismissible" id="${alertId}">
                             <span class="close far fa-times" data-dismiss="alert" aria-label="close"></span>
-                            <i class="far fa-` + (messageType === 'alert-success' ? 'check' : 'times') + ` message-icon"></i>
+                            <i class="far fa-` + (messageType === 'success' ? 'check' : 'times') + ` message-icon"></i>
                             ${message}
                         </div>`;
 
