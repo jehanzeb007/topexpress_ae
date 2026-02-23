@@ -1,1 +1,207 @@
-(()=>{function t(e){return t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},t(e)}function e(){"use strict";/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */e=function(){return n};var r,n={},a=Object.prototype,o=a.hasOwnProperty,i=Object.defineProperty||function(t,e,r){t[e]=r.value},u="function"==typeof Symbol?Symbol:{},c=u.iterator||"@@iterator",l=u.asyncIterator||"@@asyncIterator",s=u.toStringTag||"@@toStringTag";function f(t,e,r){return Object.defineProperty(t,e,{value:r,enumerable:!0,configurable:!0,writable:!0}),t[e]}try{f({},"")}catch(r){f=function(t,e,r){return t[e]=r}}function h(t,e,r,n){var a=e&&e.prototype instanceof b?e:b,o=Object.create(a.prototype),u=new C(n||[]);return i(o,"_invoke",{value:j(t,r,u)}),o}function d(t,e,r){try{return{type:"normal",arg:t.call(e,r)}}catch(t){return{type:"throw",arg:t}}}n.wrap=h;var p="suspendedStart",v="suspendedYield",g="executing",y="completed",m={};function b(){}function w(){}function $(){}var k={};f(k,c,(function(){return this}));var L=Object.getPrototypeOf,x=L&&L(L(B([])));x&&x!==a&&o.call(x,c)&&(k=x);var E=$.prototype=b.prototype=Object.create(k);function _(t){["next","throw","return"].forEach((function(e){f(t,e,(function(t){return this._invoke(e,t)}))}))}function O(e,r){function n(a,i,u,c){var l=d(e[a],e,i);if("throw"!==l.type){var s=l.arg,f=s.value;return f&&"object"==t(f)&&o.call(f,"__await")?r.resolve(f.__await).then((function(t){n("next",t,u,c)}),(function(t){n("throw",t,u,c)})):r.resolve(f).then((function(t){s.value=t,u(s)}),(function(t){return n("throw",t,u,c)}))}c(l.arg)}var a;i(this,"_invoke",{value:function(t,e){function o(){return new r((function(r,a){n(t,e,r,a)}))}return a=a?a.then(o,o):o()}})}function j(t,e,n){var a=p;return function(o,i){if(a===g)throw new Error("Generator is already running");if(a===y){if("throw"===o)throw i;return{value:r,done:!0}}for(n.method=o,n.arg=i;;){var u=n.delegate;if(u){var c=S(u,n);if(c){if(c===m)continue;return c}}if("next"===n.method)n.sent=n._sent=n.arg;else if("throw"===n.method){if(a===p)throw a=y,n.arg;n.dispatchException(n.arg)}else"return"===n.method&&n.abrupt("return",n.arg);a=g;var l=d(t,e,n);if("normal"===l.type){if(a=n.done?y:v,l.arg===m)continue;return{value:l.arg,done:n.done}}"throw"===l.type&&(a=y,n.method="throw",n.arg=l.arg)}}}function S(t,e){var n=e.method,a=t.iterator[n];if(a===r)return e.delegate=null,"throw"===n&&t.iterator.return&&(e.method="return",e.arg=r,S(t,e),"throw"===e.method)||"return"!==n&&(e.method="throw",e.arg=new TypeError("The iterator does not provide a '"+n+"' method")),m;var o=d(a,t.iterator,e.arg);if("throw"===o.type)return e.method="throw",e.arg=o.arg,e.delegate=null,m;var i=o.arg;return i?i.done?(e[t.resultName]=i.value,e.next=t.nextLoc,"return"!==e.method&&(e.method="next",e.arg=r),e.delegate=null,m):i:(e.method="throw",e.arg=new TypeError("iterator result is not an object"),e.delegate=null,m)}function P(t){var e={tryLoc:t[0]};1 in t&&(e.catchLoc=t[1]),2 in t&&(e.finallyLoc=t[2],e.afterLoc=t[3]),this.tryEntries.push(e)}function T(t){var e=t.completion||{};e.type="normal",delete e.arg,t.completion=e}function C(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(P,this),this.reset(!0)}function B(e){if(e||""===e){var n=e[c];if(n)return n.call(e);if("function"==typeof e.next)return e;if(!isNaN(e.length)){var a=-1,i=function t(){for(;++a<e.length;)if(o.call(e,a))return t.value=e[a],t.done=!1,t;return t.value=r,t.done=!0,t};return i.next=i}}throw new TypeError(t(e)+" is not iterable")}return w.prototype=$,i(E,"constructor",{value:$,configurable:!0}),i($,"constructor",{value:w,configurable:!0}),w.displayName=f($,s,"GeneratorFunction"),n.isGeneratorFunction=function(t){var e="function"==typeof t&&t.constructor;return!!e&&(e===w||"GeneratorFunction"===(e.displayName||e.name))},n.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,$):(t.__proto__=$,f(t,s,"GeneratorFunction")),t.prototype=Object.create(E),t},n.awrap=function(t){return{__await:t}},_(O.prototype),f(O.prototype,l,(function(){return this})),n.AsyncIterator=O,n.async=function(t,e,r,a,o){void 0===o&&(o=Promise);var i=new O(h(t,e,r,a),o);return n.isGeneratorFunction(e)?i:i.next().then((function(t){return t.done?t.value:i.next()}))},_(E),f(E,s,"Generator"),f(E,c,(function(){return this})),f(E,"toString",(function(){return"[object Generator]"})),n.keys=function(t){var e=Object(t),r=[];for(var n in e)r.push(n);return r.reverse(),function t(){for(;r.length;){var n=r.pop();if(n in e)return t.value=n,t.done=!1,t}return t.done=!0,t}},n.values=B,C.prototype={constructor:C,reset:function(t){if(this.prev=0,this.next=0,this.sent=this._sent=r,this.done=!1,this.delegate=null,this.method="next",this.arg=r,this.tryEntries.forEach(T),!t)for(var e in this)"t"===e.charAt(0)&&o.call(this,e)&&!isNaN(+e.slice(1))&&(this[e]=r)},stop:function(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function(t){if(this.done)throw t;var e=this;function n(n,a){return u.type="throw",u.arg=t,e.next=n,a&&(e.method="next",e.arg=r),!!a}for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a],u=i.completion;if("root"===i.tryLoc)return n("end");if(i.tryLoc<=this.prev){var c=o.call(i,"catchLoc"),l=o.call(i,"finallyLoc");if(c&&l){if(this.prev<i.catchLoc)return n(i.catchLoc,!0);if(this.prev<i.finallyLoc)return n(i.finallyLoc)}else if(c){if(this.prev<i.catchLoc)return n(i.catchLoc,!0)}else{if(!l)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return n(i.finallyLoc)}}}},abrupt:function(t,e){for(var r=this.tryEntries.length-1;r>=0;--r){var n=this.tryEntries[r];if(n.tryLoc<=this.prev&&o.call(n,"finallyLoc")&&this.prev<n.finallyLoc){var a=n;break}}a&&("break"===t||"continue"===t)&&a.tryLoc<=e&&e<=a.finallyLoc&&(a=null);var i=a?a.completion:{};return i.type=t,i.arg=e,a?(this.method="next",this.next=a.finallyLoc,m):this.complete(i)},complete:function(t,e){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&e&&(this.next=e),m},finish:function(t){for(var e=this.tryEntries.length-1;e>=0;--e){var r=this.tryEntries[e];if(r.finallyLoc===t)return this.complete(r.completion,r.afterLoc),T(r),m}},catch:function(t){for(var e=this.tryEntries.length-1;e>=0;--e){var r=this.tryEntries[e];if(r.tryLoc===t){var n=r.completion;if("throw"===n.type){var a=n.arg;T(r)}return a}}throw new Error("illegal catch attempt")},delegateYield:function(t,e,n){return this.delegate={iterator:B(t),resultName:e,nextLoc:n},"next"===this.method&&(this.arg=r),m}},n}function r(t,e,r,n,a,o,i){try{var u=t[o](i),c=u.value}catch(t){return void r(t)}u.done?e(c):Promise.resolve(c).then(n,a)}function n(t){return function(){var e=this,n=arguments;return new Promise((function(a,o){var i=t.apply(e,n);function u(t){r(i,a,o,u,c,"next",t)}function c(t){r(i,a,o,u,c,"throw",t)}u(void 0)}))}}function a(e,r){for(var n=0;n<r.length;n++){var a=r[n];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(e,(o=a.key,i=void 0,i=function(e,r){if("object"!==t(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var a=n.call(e,r||"default");if("object"!==t(a))return a;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===r?String:Number)(e)}(o,"string"),"symbol"===t(i)?i:String(i)),a)}var o,i}var o=function(){function t(){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t)}var r,o,i,u;return r=t,o=[{key:"init",value:function(){var t=this;$(document).on("click",".btn-trigger-remove-plugin",(function(t){t.preventDefault(),$("#confirm-remove-plugin-button").data("url",$(t.currentTarget).data("url")),$("#remove-plugin-modal").modal("show")})),$(document).on("click","#confirm-remove-plugin-button",(function(t){t.preventDefault();var e=$(t.currentTarget);$httpClient.make().withButtonLoading(e).delete(e.data("url")).then((function(t){var e=t.data;Botble.showSuccess(e.message),window.location.reload()})).finally((function(){return $("#remove-plugin-modal").modal("hide")}))})),$(document).on("click",".btn-trigger-update-plugin",(function(t){t.preventDefault();var e=$(t.currentTarget),r=e.data("update-url");e.prop("disabled",!0),$httpClient.make().withButtonLoading(e).post(r).then((function(t){var e=t.data;Botble.showSuccess(e.message),setTimeout((function(){return window.location.reload()}),2e3)})).finally((function(){return e.prop("disabled",!1)}))})),$(document).on("click",".btn-trigger-change-status",function(){var r=n(e().mark((function r(n){var a,o,i;return e().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:if(n.preventDefault(),a=$(n.currentTarget),o=a.data("plugin"),i=a.data("change-status-url"),1!==a.data("status")){e.next=10;break}return Botble.showButtonLoading(a),e.next=8,t.activateOrDeactivatePlugin(i);case 8:return Botble.hideButtonLoading(a),e.abrupt("return");case 10:$httpClient.makeWithoutErrorHandler().withButtonLoading(a).post(a.data("check-requirement-url")).then((function(){return t.activateOrDeactivatePlugin(i)})).catch((function(t){var e=t.response.data,r=e.data,n=e.message;if(r&&r.existing_plugins_on_marketplace){var a=$("#confirm-install-plugin-modal");return a.find(".modal-body #requirement-message").html(n),a.find('input[name="plugin_name"]').val(o),a.find('input[name="ids"]').val(r.existing_plugins_on_marketplace),void a.modal("show")}Botble.showError(n)}));case 11:case"end":return e.stop()}}),r)})));return function(t){return r.apply(this,arguments)}}()),$("button[data-check-update]").length&&this.checkUpdate(),this.handleFilters()}},{key:"handleFilters",value:function(){var t=$('[data-bb-toggle="change-search"]').val().toLowerCase(),e=$('[data-bb-toggle="change-filter-plugin-status"]:checked').val();$('button[data-bb-toggle="change-filter-plugin-status"]').each((function(t,e){var r=$(e).data("value")||$(e).val(),n="all"===r?$(".plugin-item:visible"):$('.plugin-item[data-status="'.concat(r,'"]:visible'));$('[data-bb-toggle="plugins-count"][data-status="'.concat(r,'"]')).text(n.length)}));var r=function(){$(".plugin-item").each((function(r,n){var a=$(n),o=a.data("name").toLowerCase(),i=a.data("description").toLowerCase(),u=a.data("author").toLowerCase(),c=o.includes(t),l=u.includes(t),s=i.includes(t),f="all"===e||a.data("status")===e||"updates-available"===e&&a.data("available-for-updates");(c||s||l)&&f?a.show():a.hide()})),0===$(".plugin-item:visible").length?$(".empty").show():$(".empty").hide()};$(document).on("keyup",'[data-bb-toggle="change-search"]',(function(e){e.preventDefault(),t=$(e.currentTarget).val().toLowerCase(),r()})),$(document).on("change",'input[data-bb-toggle="change-filter-plugin-status"]',(function(t){e=$(t.currentTarget).val(),r()})),$(document).on("click",'button[data-bb-toggle="change-filter-plugin-status"]',(function(t){var n=$(t.target).data("value");$('[data-bb-toggle="status-filter-label"]').text($(t.target).text()),$(".dropdown-item").removeClass("active"),$(t.target).addClass("active"),e=n,r()}))}},{key:"checkUpdate",value:function(){$httpClient.make().post($("button[data-check-update]").data("check-update-url")).then((function(t){var e=t.data;e.data&&Object.keys(e.data).forEach((function(t){var r=e.data[t],n=$('button[data-check-update="'.concat(r.name,'"]')),a=n.data("update-url").replace("__id__",r.id);n.data("update-url",a).show(),n.closest(".plugin-item").data("available-for-updates",!0).trigger("change"),$('[data-bb-toggle="plugins-count"][data-status="updates-available"]').text(e.data.length)}))}))}},{key:"activateOrDeactivatePlugin",value:(u=n(e().mark((function t(r){var n,a=arguments;return e().wrap((function(t){for(;;)switch(t.prev=t.next){case 0:return n=!(a.length>1&&void 0!==a[1])||a[1],t.abrupt("return",$httpClient.make().put(r).then((function(t){var e=t.data;Botble.showSuccess(e.message),n&&window.location.reload()})));case 2:case"end":return t.stop()}}),t)}))),function(t){return u.apply(this,arguments)})}],o&&a(r.prototype,o),i&&a(r,i),Object.defineProperty(r,"prototype",{writable:!1}),t}();$((function(){(new o).init()}))})();
+/******/ (() => { // webpackBootstrap
+/*!********************************************************************!*\
+  !*** ./platform/packages/plugin-management/resources/js/plugin.js ***!
+  \********************************************************************/
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var PluginManagement = /*#__PURE__*/function () {
+  function PluginManagement() {
+    _classCallCheck(this, PluginManagement);
+  }
+  return _createClass(PluginManagement, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+      $(document).on('click', '.btn-trigger-remove-plugin', function (event) {
+        event.preventDefault();
+        $('#confirm-remove-plugin-button').data('url', $(event.currentTarget).data('url'));
+        $('#remove-plugin-modal').modal('show');
+      });
+      $(document).on('click', '#confirm-remove-plugin-button', function (event) {
+        event.preventDefault();
+        var _self = $(event.currentTarget);
+        $httpClient.make().withButtonLoading(_self)["delete"](_self.data('url')).then(function (_ref) {
+          var data = _ref.data;
+          Botble.showSuccess(data.message);
+          window.location.reload();
+        })["finally"](function () {
+          return $('#remove-plugin-modal').modal('hide');
+        });
+      });
+      $(document).on('click', '.btn-trigger-update-plugin', function (event) {
+        event.preventDefault();
+        var currentTarget = $(event.currentTarget);
+        var url = currentTarget.data('update-url');
+        currentTarget.prop('disabled', true);
+        $httpClient.make().withButtonLoading(currentTarget).post(url).then(function (_ref2) {
+          var data = _ref2.data;
+          Botble.showSuccess(data.message);
+          setTimeout(function () {
+            return window.location.reload();
+          }, 2000);
+        })["finally"](function () {
+          return currentTarget.prop('disabled', false);
+        });
+      });
+      $(document).on('click', '.btn-trigger-change-status', /*#__PURE__*/function () {
+        var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(event) {
+          var _self, pluginName, changeStatusUrl;
+          return _regenerator().w(function (_context) {
+            while (1) switch (_context.n) {
+              case 0:
+                event.preventDefault();
+                _self = $(event.currentTarget);
+                pluginName = _self.data('plugin');
+                changeStatusUrl = _self.data('change-status-url');
+                if (!(_self.data('status') === 1)) {
+                  _context.n = 2;
+                  break;
+                }
+                Botble.showButtonLoading(_self);
+                _context.n = 1;
+                return _this.activateOrDeactivatePlugin(changeStatusUrl);
+              case 1:
+                Botble.hideButtonLoading(_self);
+                return _context.a(2);
+              case 2:
+                $httpClient.makeWithoutErrorHandler().withButtonLoading(_self).post(_self.data('check-requirement-url')).then(function () {
+                  return _this.activateOrDeactivatePlugin(changeStatusUrl);
+                })["catch"](function (e) {
+                  var _e$response$data = e.response.data,
+                    data = _e$response$data.data,
+                    message = _e$response$data.message;
+                  if (data && data.existing_plugins_on_marketplace) {
+                    var $modal = $('#confirm-install-plugin-modal');
+                    $modal.find('.modal-body #requirement-message').html(message);
+                    $modal.find('input[name="plugin_name"]').val(pluginName);
+                    $modal.find('input[name="ids"]').val(data.existing_plugins_on_marketplace);
+                    $modal.modal('show');
+                    return;
+                  }
+                  Botble.showError(message);
+                });
+              case 3:
+                return _context.a(2);
+            }
+          }, _callee);
+        }));
+        return function (_x) {
+          return _ref3.apply(this, arguments);
+        };
+      }());
+      if ($('button[data-check-update]').length) {
+        this.checkUpdate();
+      }
+      this.handleFilters();
+    }
+  }, {
+    key: "handleFilters",
+    value: function handleFilters() {
+      var search = $('[data-bb-toggle="change-search"]').val().toLowerCase();
+      var status = $('[data-bb-toggle="change-filter-plugin-status"]:checked').val();
+      $('button[data-bb-toggle="change-filter-plugin-status"]').each(function (index, element) {
+        var status = $(element).data('value') || $(element).val();
+        var $visiblePluginItems = status === 'all' ? $('.plugin-item:visible') : $(".plugin-item[data-status=\"".concat(status, "\"]:visible"));
+        $("[data-bb-toggle=\"plugins-count\"][data-status=\"".concat(status, "\"]")).text($visiblePluginItems.length);
+      });
+      var applyFilters = function applyFilters() {
+        var $pluginItems = $('.plugin-item');
+        $pluginItems.each(function (index, element) {
+          var $element = $(element);
+          var name = $element.data('name').toLowerCase();
+          var description = $element.data('description').toLowerCase();
+          var author = $element.data('author').toLowerCase();
+          var nameMatch = name.includes(search);
+          var authorMatch = author.includes(search);
+          var descriptionMatch = description.includes(search);
+          var statusMatch = status === 'all' || $element.data('status') === status || status === 'updates-available' && $element.data('available-for-updates');
+          if ((nameMatch || descriptionMatch || authorMatch) && statusMatch) {
+            $element.show();
+          } else {
+            $element.hide();
+          }
+        });
+        var $visiblePluginItems = $('.plugin-item:visible');
+        if ($visiblePluginItems.length === 0) {
+          $('.empty').show();
+        } else {
+          $('.empty').hide();
+        }
+      };
+      $(document).on('keyup', '[data-bb-toggle="change-search"]', function (event) {
+        event.preventDefault();
+        search = $(event.currentTarget).val().toLowerCase();
+        applyFilters();
+      });
+      $(document).on('change', 'input[data-bb-toggle="change-filter-plugin-status"]', function (event) {
+        status = $(event.currentTarget).val();
+        applyFilters();
+      });
+      $(document).on('click', 'button[data-bb-toggle="change-filter-plugin-status"]', function (event) {
+        var newValue = $(event.target).data('value');
+        $('[data-bb-toggle="status-filter-label"]').text($(event.target).text());
+        $('.dropdown-item').removeClass('active');
+        $(event.target).addClass('active');
+        status = newValue;
+        applyFilters();
+      });
+    }
+  }, {
+    key: "checkUpdate",
+    value: function checkUpdate() {
+      $httpClient.make().post($('button[data-check-update]').data('check-update-url')).then(function (_ref4) {
+        var data = _ref4.data;
+        if (!data.data) {
+          return;
+        }
+        Object.keys(data.data).forEach(function (key) {
+          var plugin = data.data[key];
+          var $button = $("button[data-check-update=\"".concat(plugin.name, "\"]"));
+          var url = $button.data('update-url').replace('__id__', plugin.id);
+          $button.data('update-url', url).show();
+          var $parent = $button.closest('.plugin-item');
+          $parent.data('available-for-updates', true).trigger('change');
+          $('[data-bb-toggle="plugins-count"][data-status="updates-available"]').text(data.data.length);
+        });
+      });
+    }
+  }, {
+    key: "activateOrDeactivatePlugin",
+    value: function () {
+      var _activateOrDeactivatePlugin = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2(url) {
+        var reload,
+          _args2 = arguments;
+        return _regenerator().w(function (_context2) {
+          while (1) switch (_context2.n) {
+            case 0:
+              reload = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : true;
+              return _context2.a(2, $httpClient.make().put(url).then(function (_ref5) {
+                var data = _ref5.data;
+                Botble.showSuccess(data.message);
+                if (reload) {
+                  window.location.reload();
+                }
+              }));
+          }
+        }, _callee2);
+      }));
+      function activateOrDeactivatePlugin(_x2) {
+        return _activateOrDeactivatePlugin.apply(this, arguments);
+      }
+      return activateOrDeactivatePlugin;
+    }()
+  }]);
+}();
+$(function () {
+  new PluginManagement().init();
+});
+/******/ })()
+;

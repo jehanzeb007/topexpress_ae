@@ -1,1 +1,106 @@
-(()=>{function t(e){return t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},t(e)}function e(t,e){return function(t){if(Array.isArray(t))return t}(t)||function(t,e){var n=null==t?null:"undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(null!=n){var r,a,i,o,l=[],s=!0,u=!1;try{if(i=(n=n.call(t)).next,0===e){if(Object(n)!==n)return;s=!1}else for(;!(s=(r=i.call(n)).done)&&(l.push(r.value),l.length!==e);s=!0);}catch(t){u=!0,a=t}finally{try{if(!s&&null!=n.return&&(o=n.return(),Object(o)!==o))return}finally{if(u)throw a}}return l}}(t,e)||function(t,e){if(!t)return;if("string"==typeof t)return n(t,e);var r=Object.prototype.toString.call(t).slice(8,-1);"Object"===r&&t.constructor&&(r=t.constructor.name);if("Map"===r||"Set"===r)return Array.from(t);if("Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r))return n(t,e)}(t,e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function n(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,r=new Array(e);n<e;n++)r[n]=t[n];return r}function r(e,n){for(var r=0;r<n.length;r++){var a=n[r];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(e,(i=a.key,o=void 0,o=function(e,n){if("object"!==t(e)||null===e)return e;var r=e[Symbol.toPrimitive];if(void 0!==r){var a=r.call(e,n||"default");if("object"!==t(a))return a;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===n?String:Number)(e)}(i,"string"),"symbol"===t(o)?o:String(o)),a)}var i,o}var a=function(){function t(){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t)}var n,a,i;return n=t,(a=[{key:"init",value:function(){$(document).find(".tags").each((function(t,e){var n=new Tagify(e,{keepInvalidTags:void 0===$(e).data("keep-invalid-tags")||$(e).data("keep-invalid-tags"),enforceWhitelist:void 0!==$(e).data("enforce-whitelist")&&$(e).data("enforce-whitelist"),delimiters:void 0!==$(e).data("delimiters")?$(e).data("delimiters"):",",whitelist:e.value.trim().split(/\s*,\s*/),userInput:void 0===$(e).data("user-input")||$(e).data("user-input")});$(e).data("url")&&n.on("input",(function(t){n.settings.whitelist.length=0,n.loading(!0).dropdown.hide.call(n),$httpClient.make().get($(e).data("url")).then((function(e){var r=e.data;n.settings.whitelist=r,n.loading(!1).dropdown.show.call(n,t.detail.value)}))}))})),document.querySelectorAll(".list-tagify").forEach((function(t){if(t.dataset.list){for(var n=JSON.parse(t.dataset.list),r=[],a=0,i=Object.entries(n);a<i.length;a++){var o=e(i[a],2),l=o[0],s=o[1];r.push({value:l,name:s})}var u=String(t.value).split(","),c=r.filter((function(t){if(u.includes(String(t.value)))return{value:t.id,name:t.name}}));new Tagify(t,{tagTextProp:"name",enforceWhitelist:!0,skipInvalid:!0,dropdown:{closeOnSelect:!1,enabled:0,classname:"users-list",searchKeys:["value","name"]},templates:{tag:function(t){return'\n                <tag title="'.concat(t.title||t.name,"\"\n                        contenteditable='false'\n                        spellcheck='false'\n                        tabIndex=\"-1\"\n                        class=\"").concat(this.settings.classNames.tag," ").concat(t.class?t.class:"",'"\n                        ').concat(this.getAttributes(t),">\n                    <x title='' class='tagify__tag__removeBtn' role='button' aria-label='remove tag'></x>\n                    <div class=\"d-flex align-items-center\">\n                        <span class='tagify__tag-text'>").concat(t.name,"</span>\n                    </div>\n                </tag>\n            ")},dropdownItem:function(t){return"\n                <div ".concat(this.getAttributes(t),'\n                    class="tagify__dropdown__item d-flex align-items-center ').concat(t.class?t.class:"",'"\n                    tabindex="0"\n                    role="option">\n\n                    <div class="d-flex flex-column">\n                        <strong>').concat(t.name,"</strong>\n                    </div>\n                </div>\n            ")}},whitelist:r,originalInputValueFormat:function(t){return t.map((function(t){return t.value})).join(",")}}).loadOriginalValues(c)}}))}}])&&r(n.prototype,a),i&&r(n,i),Object.defineProperty(n,"prototype",{writable:!1}),t}();$((function(){(new a).init()}))})();
+/******/ (() => { // webpackBootstrap
+/*!*************************************************!*\
+  !*** ./platform/core/base/resources/js/tags.js ***!
+  \*************************************************/
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var TagsManager = /*#__PURE__*/function () {
+  function TagsManager() {
+    _classCallCheck(this, TagsManager);
+  }
+  return _createClass(TagsManager, [{
+    key: "init",
+    value: function init() {
+      $(document).find('.tags').each(function (index, element) {
+        var tagify = new Tagify(element, {
+          keepInvalidTags: $(element).data('keep-invalid-tags') !== undefined ? $(element).data('keep-invalid-tags') : true,
+          enforceWhitelist: $(element).data('enforce-whitelist') !== undefined ? $(element).data('enforce-whitelist') : false,
+          delimiters: $(element).data('delimiters') !== undefined ? $(element).data('delimiters') : ',',
+          whitelist: element.value.trim().split(/\s*,\s*/),
+          userInput: $(element).data('user-input') !== undefined ? $(element).data('user-input') : true
+        });
+        if ($(element).data('url')) {
+          tagify.on('input', function (e) {
+            tagify.settings.whitelist.length = 0; // reset current whitelist
+            tagify.loading(true).dropdown.hide.call(tagify); // show the loader animation
+
+            $httpClient.make().get($(element).data('url')).then(function (_ref) {
+              var data = _ref.data;
+              tagify.settings.whitelist = data;
+              tagify.loading(false).dropdown.show.call(tagify, e.detail.value);
+            });
+          });
+        }
+      });
+      document.querySelectorAll('.list-tagify').forEach(function (element) {
+        if (!element.dataset.list) {
+          return;
+        }
+        var list = JSON.parse(element.dataset.list);
+        var whiteList = [];
+        for (var _i = 0, _Object$entries = Object.entries(list); _i < _Object$entries.length; _i++) {
+          var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+            key = _Object$entries$_i[0],
+            value = _Object$entries$_i[1];
+          whiteList.push({
+            value: key,
+            name: value
+          });
+        }
+        var listChosen = String(element.value).split(',');
+        var arrayChosen = whiteList.filter(function (obj) {
+          if (listChosen.includes(String(obj.value))) {
+            return {
+              value: obj.id,
+              name: obj.name
+            };
+          }
+        });
+        var tagTemplate = function tagTemplate(tagData) {
+          return "\n                <tag title=\"".concat(tagData.title || tagData.name, "\"\n                        contenteditable='false'\n                        spellcheck='false'\n                        tabIndex=\"-1\"\n                        class=\"").concat(this.settings.classNames.tag, " ").concat(tagData["class"] ? tagData["class"] : '', "\"\n                        ").concat(this.getAttributes(tagData), ">\n                    <x title='' class='tagify__tag__removeBtn' role='button' aria-label='remove tag'></x>\n                    <div class=\"d-flex align-items-center\">\n                        <span class='tagify__tag-text'>").concat(tagData.name, "</span>\n                    </div>\n                </tag>\n            ");
+        };
+        var suggestionTemplate = function suggestionTemplate(tagData) {
+          return "\n                <div ".concat(this.getAttributes(tagData), "\n                    class=\"tagify__dropdown__item d-flex align-items-center ").concat(tagData["class"] ? tagData["class"] : '', "\"\n                    tabindex=\"0\"\n                    role=\"option\">\n\n                    <div class=\"d-flex flex-column\">\n                        <strong>").concat(tagData.name, "</strong>\n                    </div>\n                </div>\n            ");
+        };
+        var tagify = new Tagify(element, {
+          tagTextProp: 'name',
+          enforceWhitelist: true,
+          skipInvalid: true,
+          // do not temporarily add invalid tags
+          dropdown: {
+            closeOnSelect: false,
+            enabled: 0,
+            classname: 'users-list',
+            searchKeys: ['value', 'name']
+          },
+          templates: {
+            tag: tagTemplate,
+            dropdownItem: suggestionTemplate
+          },
+          whitelist: whiteList,
+          originalInputValueFormat: function originalInputValueFormat(valuesArr) {
+            return valuesArr.map(function (item) {
+              return item.value;
+            }).join(',');
+          }
+        });
+        tagify.loadOriginalValues(arrayChosen);
+      });
+    }
+  }]);
+}();
+$(function () {
+  new TagsManager().init();
+});
+/******/ })()
+;
