@@ -7,7 +7,7 @@
     @php
         $type_choice = request()->input('type', PropertyTypeEnum::SALE());
     @endphp
-    <div class="d-flex flex-wrap gap-2">
+    <div class="d-flex flex-row flex-nowrap">
         @foreach ($types as $key => $type)
             <div class="form-check form-check-inline">
                 <input class="btn-check d-none" type="radio" name="type" id="cp-{{ $key }}" value="{{ $key }}"
