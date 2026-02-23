@@ -513,7 +513,7 @@ $(function () {
     if ($('.property-slide').length) {
         $('.property-slide').slick({
             slidesToShow: 3,
-            arrows: false,
+            arrows: true,
             rtl: isRTL,
             dots: true,
             autoplay: true,
