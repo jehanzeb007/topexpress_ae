@@ -276,11 +276,11 @@
             "authors": [
                 {
                     "name": "Botble Technologies",
-                    "email": "contact@botble.com"
+                    "email": "contact@devandesign.com"
                 }
             ],
             "description": "API package for Botble CMS",
-            "homepage": "https://botble.com",
+            "homepage": "https://devandesign.com",
             "keywords": [
                 "botble",
                 "botble api",
@@ -342,7 +342,7 @@
                 }
             ],
             "description": "Laravel assets management",
-            "homepage": "https://botble.com",
+            "homepage": "https://devandesign.com",
             "keywords": [
                 "botble",
                 "botble assets",
@@ -674,11 +674,11 @@
             "authors": [
                 {
                     "name": "Botble Technologies",
-                    "email": "contact@botble.com"
+                    "email": "contact@devandesign.com"
                 }
             ],
             "description": "The Botble Platform based on Laravel Framework.",
-            "homepage": "https://botble.com",
+            "homepage": "https://devandesign.com",
             "keywords": [
                 "botble",
                 "botble cms",
@@ -686,7 +686,7 @@
             ],
             "support": {
                 "issues": "https://botble.ticksy.com",
-                "document": "https://docs.botble.com"
+                "document": "https://docs.devandesign.com"
             },
             "transport-options": {
                 "relative": true
@@ -11521,11 +11521,11 @@
             "authors": [
                 {
                     "name": "Botble Technologies",
-                    "email": "contact@botble.com"
+                    "email": "contact@devandesign.com"
                 }
             ],
             "description": "Dev tool commands for Botble CMS",
-            "homepage": "https://botble.com",
+            "homepage": "https://devandesign.com",
             "keywords": [
                 "botble",
                 "botble cms",
@@ -11584,7 +11584,7 @@
                 }
             ],
             "description": "Check coding standard & code syntax with Git pre-commit hook.",
-            "homepage": "https://botble.com",
+            "homepage": "https://devandesign.com",
             "keywords": [
                 "botble",
                 "botble cms",
