@@ -42,8 +42,9 @@ return [
     'types' => [
         'sale' => 'Sale',
         'rent' => 'Rent',
+        'offplan' => 'Off Plan',
     ],
-    'rent_periods' => [
+    'periods' => [
         'day' => 'Daily',
         'week' => 'Weekly',
         'month' => 'Monthly',

@@ -27,6 +27,9 @@ return [
             'enable_custom_fields' => 'Enable custom fields?',
             'hide_projects_in_statuses' => 'Hide project if its status is:',
             'hide_properties_in_statuses' => 'Hide property if its status is:',
+            'enabled_projects' => 'Enable projects?',
+            'enabled_projects_helper' => 'If you disable this, all projects will be hidden. You may need to remove menu Projects in Appearance -> Menus -> Main menu.',
+            'enabled_property_types' => 'Enabled property types',
         ],
     ],
     'currency' => [
@@ -96,4 +99,5 @@ return [
         'name' => 'Invoice Template',
         'description' => 'View and update invoice template',
     ],
+    'currencies' => 'Currencies',
 ];

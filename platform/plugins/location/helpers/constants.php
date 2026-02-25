@@ -11,3 +11,7 @@ if (! defined('STATE_MODULE_SCREEN_NAME')) {
 if (! defined('CITY_MODULE_SCREEN_NAME')) {
     define('CITY_MODULE_SCREEN_NAME', 'city');
 }
+
+if (! defined('NEIGHBOURHOOD_MODULE_SCREEN_NAME')) {
+    define('NEIGHBOURHOOD_MODULE_SCREEN_NAME', 'neighbourhood');
+}

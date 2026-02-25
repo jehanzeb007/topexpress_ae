@@ -48,6 +48,24 @@ return new class () extends Migration {
                 $table->timestamps();
             });
         }
+
+        if (! Schema::hasTable('neighbourhoods')) {
+            Schema::create('neighbourhoods', function (Blueprint $table) {
+                $table->id();
+                $table->string('name', 255);
+                $table->foreignId('city_id')->nullable();
+                $table->foreignId('state_id')->nullable();
+                $table->foreignId('country_id')->nullable();
+                $table->string('record_id', 40)->nullable();
+                $table->tinyInteger('order')->default(0);
+                $table->string('image')->nullable();
+                $table->tinyInteger('is_default')->unsigned()->default(0);
+                $table->tinyInteger('is_featured')->unsigned()->default(0);
+                $table->string('status', 60)->default('published');
+                $table->string('slug', 120)->unique()->nullable();
+                $table->timestamps();
+            });
+        }
     }
 
     public function down(): void
@@ -55,5 +73,6 @@ return new class () extends Migration {
         Schema::dropIfExists('cities');
         Schema::dropIfExists('states');
         Schema::dropIfExists('countries');
+        Schema::dropIfExists('neighbourhoods');
     }
 };

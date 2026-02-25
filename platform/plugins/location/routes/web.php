@@ -35,6 +35,15 @@ Route::group(['namespace' => 'Botble\Location\Http\Controllers'], function () {
                 'permission' => 'city.index',
             ]);
         });
+        Route::group(['prefix' => 'neighbourhoods', 'as' => 'neighbourhood.'], function () {
+            Route::resource('', 'NeighbourhoodController')->parameters(['' => 'neighbourhood']);
+
+            Route::get('list', [
+                'as' => 'list',
+                'uses' => 'NeighbourhoodController@getList',
+                'permission' => 'city.index',
+            ]);
+        });
 
         Route::prefix('location')->name('location.')->group(function () {
             Route::post('upload/process', [

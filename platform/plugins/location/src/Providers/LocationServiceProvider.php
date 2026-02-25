@@ -102,6 +102,13 @@ class LocationServiceProvider extends ServiceProvider
                     'route' => 'city.index',
                 ])
                 ->registerItem([
+                    'id' => 'cms-plugins-neighbourhood',
+                    'priority' => 2,
+                    'parent_id' => 'cms-plugins-location',
+                    'name' => 'plugins/location::neighbourhood.name',
+                    'route' => 'neighbourhood.index',
+                ])
+                ->registerItem([
                     'id' => 'cms-plugins-location-bulk-import',
                     'priority' => 3,
                     'parent_id' => 'cms-plugins-location',
