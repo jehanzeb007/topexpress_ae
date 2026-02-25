@@ -106,5 +106,7 @@ Route::group(['namespace' => 'Botble\Location\Http\Controllers'], function () {
             ->name('ajax.states-by-country');
         Route::get('ajax/cities-by-state', 'CityController@ajaxGetCities')
             ->name('ajax.cities-by-state');
+        Route::get('ajax/neighbourhoods-by-city', 'NeighbourhoodController@ajaxGetNeighbourhoods')
+            ->name('ajax.neighbourhoods-by-city');
     });
 });

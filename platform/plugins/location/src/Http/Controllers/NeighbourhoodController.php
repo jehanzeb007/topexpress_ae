@@ -96,7 +96,7 @@ class NeighbourhoodController extends BaseController
             ->setData(NeighbourhoodResource::collection($data));
     }
 
-    public function ajaxGetCities(Request $request)
+    public function ajaxGetNeighbourhoods(Request $request)
     {
         $data = Neighbourhood::query()
             ->select(['id', 'name'])
@@ -114,6 +114,11 @@ class NeighbourhoodController extends BaseController
 
         if ($countryId && $countryId != 'null') {
             $data = $data->where('country_id', $countryId);
+        }
+
+        $cityId = $request->input('city_id');
+        if ($cityId && $cityId != 'null') {
+            $data = $data->where('city_id', $cityId);
         }
 
         $keyword = BaseHelper::stringify($request->query('k'));

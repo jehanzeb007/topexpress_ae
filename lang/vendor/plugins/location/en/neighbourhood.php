@@ -10,6 +10,6 @@ return [
     'select_city' => 'Select city...',
     'select_country' => 'Select country',
     'country' => 'Country',
-    'select_neighbourhood' => 'Select neighbourhood...',
+    'select_country' => 'Select country...',
     'neighbourhood' => 'Neighbourhood',
 ];

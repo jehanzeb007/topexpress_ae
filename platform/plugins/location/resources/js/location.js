@@ -57,10 +57,40 @@ class Location {
         })
     }
 
+    static getneighbourhood($el, cityId, $button = null, countryId = null) {
+        $.ajax({
+            url: $el.data('url'),
+            data: {
+                city_id: cityId,
+                country_id: countryId,
+            },
+            type: 'GET',
+            beforeSend: () => {
+                $button && $button.prop('disabled', true)
+            },
+            success: (res) => {
+                if (res.error) {
+                    Botble.showError(res.message)
+                } else {
+                    let options = ''
+                    $.each(res.data, (index, item) => {
+                        options += '<option value="' + (item.id || '') + '">' + item.name + '</option>'
+                    })
+
+                    $el.html(options)
+                    $el.trigger('change')
+                }
+            },
+            complete: () => {
+                $button && $button.prop('disabled', false)
+            },
+        })
+    }
     init() {
         const country = 'select[data-type="country"]'
         const state = 'select[data-type="state"]'
         const city = 'select[data-type="city"]'
+        const neighbourhood = 'select[data-type="neighbourhood"]'
 
         $(document).on('change', country, function (e) {
             e.preventDefault()
@@ -69,9 +99,11 @@ class Location {
 
             const $state = $parent.find(state)
             const $city = $parent.find(city)
+            const $neighbourhood = $parent.find(neighbourhood)
 
             $state.find('option:not([value=""]):not([value="0"])').remove()
             $city.find('option:not([value=""]):not([value="0"])').remove()
+            $neighbourhood.find('option:not([value=""]):not([value="0"])').remove()
 
             const $button = $(e.currentTarget).closest('form').find('button[type=submit], input[type=submit]')
             const countryId = $(e.currentTarget).val()
@@ -80,6 +112,8 @@ class Location {
                 if ($state.length) {
                     Location.getStates($state, countryId, $button)
                     Location.getCities($city, null, $button, countryId)
+                }if ($city.length) {
+                    Location.getneighbourhood($city, countryId, $button)
                 } else {
                     Location.getCities($city, null, $button, countryId)
                 }
@@ -109,7 +143,30 @@ class Location {
             }
         })
 
+        $(document).on('change', city, function (e) {
+            e.preventDefault()
+
+            const $parent = getParent($(e.currentTarget))
+            const $neighbourhood = $parent.find(neighbourhood)
+            if ($neighbourhood.length) {
+                $neighbourhood.find('option:not([value=""]):not([value="0"])').remove()
+                const stateId = $(e.currentTarget).val()
+                const $button = $(e.currentTarget).closest('form').find('button[type=submit], input[type=submit]')
+
+                if (stateId) {
+                    Location.getneighbourhood($neighbourhood, stateId, $button)
+                } else {
+                    const countryId = $parent.find(country).val()
+
+                    Location.getneighbourhood($neighbourhood, null, $button, countryId)
+                }
+
+                stateFieldUsingSelect2()
+            }
+        })
+
         function stateFieldUsingSelect2() {
+
             if (jQuery().select2) {
                 $(document)
                     .find('select[data-using-select2="true"]')

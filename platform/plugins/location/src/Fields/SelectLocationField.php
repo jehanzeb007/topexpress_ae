@@ -7,6 +7,7 @@ use Botble\Base\Facades\Html;
 use Botble\Base\Forms\Form;
 use Botble\Base\Forms\FormField;
 use Botble\Location\Models\City;
+use Botble\Location\Models\Neighbourhood;
 use Botble\Location\Models\Country;
 use Botble\Location\Models\State;
 use Illuminate\Support\Arr;
@@ -24,6 +25,7 @@ class SelectLocationField extends FormField
             'country' => 'country_id',
             'state' => 'state_id',
             'city' => 'city_id',
+            'neighbourhood' => 'neighbourhood_id',
         ];
 
         $this->locationKeys = array_filter(array_merge($default, Arr::get($options, 'locationKeys', [])));
@@ -175,6 +177,45 @@ class SelectLocationField extends FormField
             'empty_value' => null,
         ], $this->getOption('attrs.city', []));
     }
+    public function getNeighbourhoodOptions(): array
+    {
+        $neighbourhoods = [];
+        $neighbourhoodKey = Arr::get($this->locationKeys, 'neighbourhood');
+        $cityKey = Arr::get($this->locationKeys, 'city');
+        $cityId = Arr::get($this->getValue(), 'city');
+        $stateId = Arr::get($this->getValue(), 'state');
+        $countryId = Arr::get($this->getValue(), 'country');
+        $value = Arr::get($this->getValue(), 'neighbourhood');
+        //echo '<pre>';print_r($this->getValue());exit;
+        if ($cityId) {
+            $neighbourhoods = Neighbourhood::query()
+                ->where('city_id', $cityId)
+                ->select('name', 'id')->get()
+                ->mapWithKeys(fn ($item) => [$item->getKey() => $item->name])
+                ->all();
+        } elseif ($countryId) {
+            $neighbourhoods = Neighbourhood::query()
+                ->where('country_id', $countryId)
+                ->select('name', 'id')
+                ->get()
+                ->mapWithKeys(fn ($item) => [$item->getKey() => $item->name])
+                ->all();
+        }
+
+        $attr = array_merge($this->getOption('attr', []), [
+            'id' => $cityKey,
+            'data-url' => route('ajax.neighbourhoods-by-city'),
+            'class' => 'select-search-full',
+            'data-type' => 'neighbourhood',
+        ]);
+        return array_merge([
+            'label' => trans('plugins/location::neighbourhood.name'),
+            'attr' => $attr,
+            'choices' => ['' => trans('plugins/location::neighbourhood.select_neighbourhood')] + $neighbourhoods,
+            'selected' => $value,
+            'empty_value' => null,
+        ], $this->getOption('attrs.neighbourhood', []));
+    }
 
     public function render(
         array $options = [],
@@ -216,6 +257,11 @@ class SelectLocationField extends FormField
                     $options = $this->getCityOptions();
 
                     break;
+                case 'neighbourhood':
+                    $options = $this->getNeighbourhoodOptions();
+
+                    break;
+
             }
 
             $options = array_merge($this->options, $options);

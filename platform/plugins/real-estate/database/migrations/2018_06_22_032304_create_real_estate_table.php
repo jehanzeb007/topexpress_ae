@@ -39,6 +39,7 @@ class CreateRealEstateTable extends Migration
                 $table->decimal('price', 15)->nullable();
                 $table->integer('currency_id')->unsigned()->nullable();
                 $table->integer('city_id')->unsigned()->nullable();
+                $table->integer('neighbourhood_id')->unsigned()->nullable();
                 $table->string('period', 30)->default('month');
                 $table->integer('author_id')->nullable();
                 $table->string('author_type', 255)->default(addslashes(User::class));
