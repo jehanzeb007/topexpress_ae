@@ -2,7 +2,7 @@
     use Botble\Base\Enums\BaseStatusEnum;
     use Botble\Location\Repositories\Interfaces\NeighbourhoodInterface;
 
-    $cities = collect([]);
+    $neighbourhoods = collect([]);
     if (is_plugin_active('location')) {
         $condition = [
                 'neighbourhoods.status' => BaseStatusEnum::PUBLISHED,
@@ -13,12 +13,12 @@
             $condition['neighbourhoods.country_id'] = $countryId;
         }
 
-        $cities = app(NeighbourhoodInterface::class)->advancedGet([
+        $neighbourhoods = app(NeighbourhoodInterface::class)->advancedGet([
             'condition' => $condition,
             'take' => (int) theme_option('number_of_featured_cities', 20),
             'withCount' => [],
-            'select' => ['neighbourhoods.id', 'neighbourhoods.name', 'neighbourhoods.slug'],
-            'with' => ['metadata'],
+            'select' => ['neighbourhoods.id', 'neighbourhoods.name', 'neighbourhoods.slug', 'neighbourhoods.image'],
+            'with' => [],
         ]);
     }
 @endphp
@@ -35,23 +35,24 @@
         </div>
 
         <div class="row list-layout">
-            @foreach ($cities as $city)
-                <div class="col-lg-4 col-md-4">
+            @foreach ($neighbourhoods as $neighbourhood)
+                
+                <div class="col-lg-3 col-md-3">
                     <div class="location-property-wrap">
                         <div class="location-property-thumb">
-                            <a href="{{ route('public.properties-by-city', ['slug' => $city['slug']]) }}">
+                            <a href="{{ route('public.properties-by-city', ['slug' => $neighbourhood['slug']]) }}">
                                 <img src="{{ get_image_loading() }}"
-                                     data-src="{{ RvMedia::getImageUrl($city->getMetaData('image', true), 'medium', false, RvMedia::getDefaultImage()) }}"
-                                     class="w-100 lazy" alt="{{ $city->name }}"/>
+                                     data-src="{{ RvMedia::getImageUrl($neighbourhood->image, 'medium', false, RvMedia::getDefaultImage()) }}"
+                                     class="w-100 lazy" alt="{{ $neighbourhood->name }}"/>
                             </a>
                         </div>
                         <div class="location-property-content">
                             <div class="lp-content-flex">
-                                <h4 class="lp-content-title">{{ $city->name }}</h4>
-                                <span>{{ $city->properties_count }} {{ __('Properties') }}</span>
+                                <h4 class="lp-content-title">{{ $neighbourhood->name }}</h4>
+                                <span>{{ $neighbourhood->properties_count }} {{ __('Properties') }}</span>
                             </div>
                             <div class="lp-content-right">
-                                <a href="{{ route('public.properties-by-city', ['slug' => $city['slug']]) }}"
+                                <a href="{{ route('public.properties-by-city', ['slug' => $neighbourhood['slug']]) }}"
                                    class="lp-property-view">
                                     <i class="ti-angle-right"></i>
                                 </a>
