@@ -16,6 +16,8 @@ use Botble\Location\Repositories\Eloquent\CityRepository;
 use Botble\Location\Repositories\Eloquent\CountryRepository;
 use Botble\Location\Repositories\Eloquent\StateRepository;
 use Botble\Location\Repositories\Interfaces\CityInterface;
+use Botble\Location\Repositories\Interfaces\NeighbourhoodInterface;
+use Botble\Location\Repositories\Eloquent\NeighbourhoodRepository;
 use Botble\Location\Repositories\Interfaces\CountryInterface;
 use Botble\Location\Repositories\Interfaces\StateInterface;
 use Illuminate\Database\Schema\Blueprint;
@@ -39,6 +41,10 @@ class LocationServiceProvider extends ServiceProvider
 
         $this->app->bind(CityInterface::class, function () {
             return new CityRepository(new City());
+        });
+
+        $this->app->bind(NeighbourhoodInterface::class, function () {
+            return new NeighbourhoodRepository(new City());
         });
 
         AliasLoader::getInstance()->alias('Location', Location::class);

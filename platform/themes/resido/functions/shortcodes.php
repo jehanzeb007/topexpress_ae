@@ -207,7 +207,7 @@ app()->booted(function () {
             __('Find By Locations Neighbourhood'),
             __('Find By Locations Neighbourhood'),
             function ($shortcode) {
-                return Theme::partial('shortcodes.properties-by-locations', [
+                return Theme::partial('shortcodes.properties-by-neighbourhood', [
                     'title' => $shortcode->title,
                     'description' => $shortcode->content,
                     'country' => $shortcode->country,
@@ -217,7 +217,7 @@ app()->booted(function () {
 
         shortcode()->setAdminConfig('properties-by-neighbourhood', function ($attributes, $content) {
             $countries = Helper::countries();
-            return Theme::partial('shortcodes.properties-by-locations-admin-config', compact('attributes', 'content','countries'));
+            return Theme::partial('shortcodes.properties-by-neighbourhood-admin-config', compact('attributes', 'content','countries'));
         });
 
         add_shortcode('testimonials', __('Testimonials'), __('Testimonials'), function ($shortcode) {
