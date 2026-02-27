@@ -4,11 +4,18 @@
 
     $cities = collect([]);
     if (is_plugin_active('location')) {
-        $cities = app(CityInterface::class)->advancedGet([
-            'condition' => [
+        $condition = [
                 'cities.status' => BaseStatusEnum::PUBLISHED,
-                'is_featured'=> 1
-            ],
+                'is_featured'=> 1,
+                //'cities.country_id'=>2
+            ];
+        $countryId = Botble\Location\Models\Country::where('code', $country)->value('id');
+        if(!empty($countryId)){
+            $condition['cities.country_id'] = $countryId;
+        }
+        print_r($condition);
+        $cities = app(CityInterface::class)->advancedGet([
+            'condition' => $condition,
             'take' => (int) theme_option('number_of_featured_cities', 6),
             'withCount' => ['properties'],
             'select' => ['cities.id', 'cities.name', 'cities.slug'],
@@ -22,7 +29,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-10 text-center">
                 <div class="sec-heading center">
-                    <h2>{!! clean($title) !!}</h2>
+                    <h2>{!! clean($title) !!} {{$countryId}}</h2>
                     <p>{!! clean($description) !!}</p>
                 </div>
             </div>

@@ -7,6 +7,7 @@ use Botble\RealEstate\Repositories\Interfaces\AccountInterface;
 use Botble\RealEstate\Repositories\Interfaces\PackageInterface;
 use Botble\Testimonial\Repositories\Interfaces\TestimonialInterface;
 use Botble\Theme\Facades\Theme;
+use Botble\Base\Supports\Helper;
 use Botble\Theme\Supports\ThemeSupport;
 use Illuminate\Support\Facades\App;
 
@@ -185,18 +186,38 @@ app()->booted(function () {
 
         add_shortcode(
             'properties-by-locations',
-            __('Find By Locations'),
-            __('Find By Locations'),
+            __('Find By Locations Cities'),
+            __('Find By Locations Cities'),
             function ($shortcode) {
                 return Theme::partial('shortcodes.properties-by-locations', [
                     'title' => $shortcode->title,
                     'description' => $shortcode->content,
+                    'country' => $shortcode->country,
                 ]);
             }
         );
 
         shortcode()->setAdminConfig('properties-by-locations', function ($attributes, $content) {
-            return Theme::partial('shortcodes.properties-by-locations-admin-config', compact('attributes', 'content'));
+            $countries = Helper::countries();
+            return Theme::partial('shortcodes.properties-by-locations-admin-config', compact('attributes', 'content','countries'));
+        });
+
+        add_shortcode(
+            'properties-by-neighbourhood',
+            __('Find By Locations Neighbourhood'),
+            __('Find By Locations Neighbourhood'),
+            function ($shortcode) {
+                return Theme::partial('shortcodes.properties-by-locations', [
+                    'title' => $shortcode->title,
+                    'description' => $shortcode->content,
+                    'country' => $shortcode->country,
+                ]);
+            }
+        );
+
+        shortcode()->setAdminConfig('properties-by-neighbourhood', function ($attributes, $content) {
+            $countries = Helper::countries();
+            return Theme::partial('shortcodes.properties-by-locations-admin-config', compact('attributes', 'content','countries'));
         });
 
         add_shortcode('testimonials', __('Testimonials'), __('Testimonials'), function ($shortcode) {
