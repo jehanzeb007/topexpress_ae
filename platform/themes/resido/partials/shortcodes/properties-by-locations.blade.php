@@ -13,7 +13,6 @@
         if(!empty($countryId)){
             $condition['cities.country_id'] = $countryId;
         }
-        print_r($condition);
         $cities = app(CityInterface::class)->advancedGet([
             'condition' => $condition,
             'take' => (int) theme_option('number_of_featured_cities', 6),

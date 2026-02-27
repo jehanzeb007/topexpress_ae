@@ -36,7 +36,7 @@
 
         <div class="row list-layout">
             @foreach ($neighbourhoods as $neighbourhood)
-                
+
                 <div class="col-lg-3 col-md-3">
                     <div class="location-property-wrap">
                         <div class="location-property-thumb">
