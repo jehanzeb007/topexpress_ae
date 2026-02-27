@@ -5,6 +5,7 @@ namespace Botble\Location\Forms;
 use Botble\Base\Facades\Assets;
 use Botble\Base\Forms\FieldOptions\IsDefaultFieldOption;
 use Botble\Base\Forms\FieldOptions\NameFieldOption;
+use Botble\Base\Forms\FieldOptions\OnOffFieldOption;
 use Botble\Base\Forms\FieldOptions\SortOrderFieldOption;
 use Botble\Base\Forms\FieldOptions\StatusFieldOption;
 use Botble\Base\Forms\Fields\MediaImageField;
@@ -91,6 +92,14 @@ class NeighbourhoodForm extends FormAbstract
             ])
             ->add('order', NumberField::class, SortOrderFieldOption::make()->toArray())
             ->add('is_default', OnOffField::class, IsDefaultFieldOption::make()->toArray())
+            ->add(
+                'is_featured',
+                OnOffField::class,
+                OnOffFieldOption::make()
+                    ->label(trans('core/base::forms.is_featured'))
+                    ->defaultValue(false)
+                    ->toArray()
+            )
             ->add('status', SelectField::class, StatusFieldOption::make()->toArray())
             ->add('image', MediaImageField::class)
             ->setBreakFieldPoint('status');

@@ -12,18 +12,18 @@ use Illuminate\Database\Query\JoinClause;
 
 class NeighbourhoodRepository extends RepositoriesAbstract implements NeighbourhoodInterface
 {
-    public function filters(?string $keyword, ?int $limit = 10, array $with = [], array $select = ['cities.*']): Collection
+    public function filters(?string $keyword, ?int $limit = 10, array $with = [], array $select = ['neighbourhoods.*']): Collection
     {
         $data = $this->model
-            ->where('cities.status', BaseStatusEnum::PUBLISHED)
+            ->where('neighbourhoods.status', BaseStatusEnum::PUBLISHED)
             ->leftJoin('states', function (JoinClause $query) {
                 $query
-                    ->on('states.id', '=', 'cities.state_id')
+                    ->on('states.id', '=', 'neighbourhoods.state_id')
                     ->where('states.status', BaseStatusEnum::PUBLISHED);
             })
             ->join('countries', function (JoinClause $query) {
                 $query
-                    ->on('countries.id', '=', 'cities.country_id')
+                    ->on('countries.id', '=', 'neighbourhoods.country_id')
                     ->where('countries.status', BaseStatusEnum::PUBLISHED);
             });
 
@@ -46,7 +46,7 @@ class NeighbourhoodRepository extends RepositoriesAbstract implements Neighbourh
             $data = $data
                 ->where(function (Builder $query) use ($keyword) {
                     return $query
-                        ->where('cities.name', 'LIKE', '%' . $keyword . '%')
+                        ->where('neighbourhoods.name', 'LIKE', '%' . $keyword . '%')
                         ->orWhere('states.name', 'LIKE', '%' . $keyword . '%');
                 });
         }

@@ -5,7 +5,7 @@
     $cities = collect([]);
     if (is_plugin_active('location')) {
         $condition = [
-                'cities.status' => BaseStatusEnum::PUBLISHED,
+                'neighbourhoods.status' => BaseStatusEnum::PUBLISHED,
                 'is_featured'=> 1,
             ];
         $countryId = Botble\Location\Models\Country::where('code', $country)->value('id');
@@ -15,8 +15,8 @@
 
         $cities = app(NeighbourhoodInterface::class)->advancedGet([
             'condition' => $condition,
-            'take' => (int) theme_option('number_of_featured_cities', 6),
-            'withCount' => ['properties'],
+            'take' => (int) theme_option('number_of_featured_cities', 20),
+            'withCount' => [],
             'select' => ['neighbourhoods.id', 'neighbourhoods.name', 'neighbourhoods.slug'],
             'with' => ['metadata'],
         ]);

@@ -10,6 +10,7 @@ use Botble\Base\Traits\LoadAndPublishDataTrait;
 use Botble\LanguageAdvanced\Supports\LanguageAdvancedManager;
 use Botble\Location\Facades\Location;
 use Botble\Location\Models\City;
+use Botble\Location\Models\Neighbourhood;
 use Botble\Location\Models\Country;
 use Botble\Location\Models\State;
 use Botble\Location\Repositories\Eloquent\CityRepository;
@@ -44,7 +45,7 @@ class LocationServiceProvider extends ServiceProvider
         });
 
         $this->app->bind(NeighbourhoodInterface::class, function () {
-            return new NeighbourhoodRepository(new City());
+            return new NeighbourhoodRepository(new Neighbourhood());
         });
 
         AliasLoader::getInstance()->alias('Location', Location::class);

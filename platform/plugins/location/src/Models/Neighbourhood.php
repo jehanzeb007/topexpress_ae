@@ -24,6 +24,7 @@ class Neighbourhood extends BaseModel
         'image',
         'order',
         'is_default',
+        'is_featured',
         'status',
     ];
 
@@ -31,6 +32,7 @@ class Neighbourhood extends BaseModel
         'status' => BaseStatusEnum::class,
         'name' => SafeContent::class,
         'is_default' => 'bool',
+        'is_featured' => 'bool',
         'order' => 'int',
     ];
 
