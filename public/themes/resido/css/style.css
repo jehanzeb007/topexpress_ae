@@ -5892,7 +5892,7 @@ label {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px; /* optional */
+  border-radius: 8px;
 }
 
 .neighbourhood-property-content {
