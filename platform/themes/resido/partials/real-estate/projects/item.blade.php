@@ -32,7 +32,10 @@
             </div>
         </div>
         <div class="project-category position-absolute">
-            <span class="prt-types">{{ $project->category->name }}</span>
+            <span class="prt-types">
+{{--                {{ $project->category->name }}--}}
+                    Featured
+            </span>
         </div>
         <div class="list-price-wrapper">
             <div class="list-price">
@@ -93,7 +96,7 @@
                 <div class="foot-location d-flex">
                     <img src="{{ Theme::asset()->url('img/pin.svg') }}" width="18"
                         alt="{!! clean($project->city_name ) !!}"/>
-                    {!! clean($project->city_name ) !!}
+                    {!! clean($project->city_name ) !!}, {!! clean($project->city_name ) !!}
                 </div>
             </div>
             <div class="footer-flex">
