@@ -48,7 +48,8 @@
                         </div>
                         <div class="neighbourhood-property-content">
                             <div class="lp-content-flex">
-                                <h4 class="lp-content-title">Property For Sale in {{ $neighbourhood->name }}</h4>
+                                <h4 class="lp-content-title">Property For Sale in</h4>
+                                <strong>{{ $neighbourhood->name }}</strong>
                             </div>
                             <div class="lp-content-right">
                                 <a href="{{ route('public.properties-by-city', ['slug' => $neighbourhood['slug']]) }}"
