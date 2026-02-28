@@ -38,7 +38,7 @@
             @foreach ($neighbourhoods as $neighbourhood)
 
                 <div class="col-lg-3 col-md-3">
-                    <div class="neighbourhood-property-wrap">
+                    <div class="neighbourhood-property-wrap mb-2">
                         <div class="neighbourhood-property-thumb">
                             <a href="{{ route('public.properties-by-city', ['slug' => $neighbourhood['slug']]) }}">
                                 <img src="{{ get_image_loading() }}"
@@ -64,7 +64,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center mt-3">
                 <a href="{{ route('public.properties') }}"
                    class="btn btn-theme-light-2 rounded">{{ __('Browse More Locations') }}</a>
             </div>
