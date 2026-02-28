@@ -6197,31 +6197,29 @@ label {
 
 /*----------------- Search By Location --------------*/
 .location-property-wrap {
-    display: block;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 8px;
-    background: #ffffff;
-    margin-bottom: 30px;
-    transition: all ease 0.4s;
-    border: 1px solid #e2e6f1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
+
+
 .location-property-thumb {
-    position: relative;
-    overflow: hidden;
+    width: 30%;
 }
 
 .location-property-thumb img {
-    transition: all ease 0.4s;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* optional */
 }
 
 .location-property-content {
-    padding: 1.5rem 1rem;
+    width: 70%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 
 .lp-content-flex {
