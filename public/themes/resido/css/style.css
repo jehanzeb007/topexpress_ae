@@ -5875,6 +5875,33 @@ label {
   width: 100%;
 }
 
+.neighbourhood-property-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.neighbourhood-property-thumb {
+  width: 30%;
+}
+
+.neighbourhood-property-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* optional */
+}
+
+.neighbourhood-property-content {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .lp-content-flex {
   flex: 1;
 }

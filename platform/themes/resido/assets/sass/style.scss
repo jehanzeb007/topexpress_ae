@@ -6197,25 +6197,56 @@ label {
 
 /*----------------- Search By Location --------------*/
 .location-property-wrap {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    margin-bottom: 30px;
+    transition: all ease 0.4s;
+    border: 1px solid #e2e6f1;
 }
 
 
 
 .location-property-thumb {
-    width: 30%;
+    position: relative;
+    overflow: hidden;
 }
 
 .location-property-thumb img {
+    transition: all ease 0.4s;
+}
+
+.location-property-content {
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.neighbourhood-property-wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.neighbourhood-property-thumb {
+    width: 30%;
+}
+
+.neighbourhood-property-thumb img {
     width: 100%;
     height: auto;
     display: block;
     border-radius: 8px; /* optional */
 }
 
-.location-property-content {
+.neighbourhood-property-content {
     width: 70%;
     display: flex;
     justify-content: space-between;

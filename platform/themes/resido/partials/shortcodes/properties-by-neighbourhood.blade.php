@@ -38,15 +38,15 @@
             @foreach ($neighbourhoods as $neighbourhood)
 
                 <div class="col-lg-3 col-md-3">
-                    <div class="location-property-wrap">
-                        <div class="location-property-thumb">
+                    <div class="neighbourhood-property-wrap">
+                        <div class="neighbourhood-property-thumb">
                             <a href="{{ route('public.properties-by-city', ['slug' => $neighbourhood['slug']]) }}">
                                 <img src="{{ get_image_loading() }}"
                                      data-src="{{ RvMedia::getImageUrl($neighbourhood->image, 'medium', false, RvMedia::getDefaultImage()) }}"
                                      class="w-100 lazy" alt="{{ $neighbourhood->name }}"/>
                             </a>
                         </div>
-                        <div class="location-property-content">
+                        <div class="neighbourhood-property-content">
                             <div class="lp-content-flex">
                                 <h4 class="lp-content-title">{{ $neighbourhood->name }}</h4>
                                 <span>{{ $neighbourhood->properties_count }} {{ __('Properties') }}</span>
