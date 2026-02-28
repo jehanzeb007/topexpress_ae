@@ -200,7 +200,7 @@ class Project extends BaseModel
     {
         return Attribute::make(
             get: function () {
-                return ($this->city->name ? $this->city->name . ', ' : null) . $this->neighbourhood->name;
+                return $this->neighbourhood->name.', '.($this->city->name ? $this->city->name: null);
             },
         );
     }
