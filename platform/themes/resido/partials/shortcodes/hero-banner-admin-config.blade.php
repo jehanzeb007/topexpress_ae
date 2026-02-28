@@ -8,7 +8,12 @@
 </div>
 <div class="form-group mb-3">
     <label class="control-label">{{ __('Background') }}</label>
-    {!! Form::mediaImage('bg', Arr::get($attributes, 'bg')) !!}
+    {!! Form::mediaFile('bg', Arr::get($attributes, 'bg'), [
+    'allowed_mime_types' => [
+        'image/*',
+        'video/*',
+    ]
+]) !!}
 </div>
 <div class="form-group mb-3">
     <label class="control-label">{{ __('Overlay') }}</label>

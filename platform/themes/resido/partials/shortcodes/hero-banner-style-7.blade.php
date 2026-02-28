@@ -1,6 +1,21 @@
-<div class="image-cover hero-banner"
-    style="background:#eff6ff url({{ RvMedia::getImageUrl($bg, null, false, RvMedia::getDefaultImage()) }}) no-repeat;">
-</div>
+@php
+    $fileUrl = RvMedia::getImageUrl($bg);
+    $extension = strtolower(pathinfo($bg, PATHINFO_EXTENSION));
+    $videoExtensions = ['mp4','webm','mov','avi','mkv'];
+@endphp
+
+@if(in_array($extension, $videoExtensions))
+    <div style="height: 80vh;position: relative;overflow: hidden;">
+        <video autoplay muted loop playsinline style="width: 100%;height: 100%;object-fit: cover;">
+            <source src="{{ $fileUrl }}">
+        </video>
+    </div>
+@else
+    <div class="hero-banner image-cover"
+         style="background-image: url('{{ $fileUrl }}');">
+    </div>
+@endif
+
 <section>
     <div class="container">
         <div class="row justify-content-center">
