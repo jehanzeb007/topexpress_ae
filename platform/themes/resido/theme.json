@@ -4,7 +4,7 @@
     "namespace": "Theme\\Resido\\",
     "description": "Real Estate theme",
     "author": "TheSky9 Team",
-    "version": "3.4.2",
+    "version": "3.4.3",
     "required_plugins": [
         "blog",
         "contact",
