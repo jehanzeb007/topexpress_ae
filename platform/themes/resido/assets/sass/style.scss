@@ -4920,7 +4920,6 @@ ul:last-child {
 }
 
 .hero-banner {
-    padding: 5em 0 5em;
     display: flex;
     flex-wrap: wrap;
     min-height: 400px;
@@ -4937,8 +4936,8 @@ ul:last-child {
     box-shadow: 0 20px 30px rgba(0, 22, 84, 0.15);
 }
 .hero-form-wrapper {
-    position: absolute;
-    bottom: 40px;
+    position: absolute !important;
+    bottom: 40px !important;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -12975,10 +12974,7 @@ ul.packages-lists-list li {
         right: 20px;
         max-width: 100%;
     }
-
-    .hero-title {
-        font-size: 1.8rem;
-    }
+    
 
     .hero-desc {
         font-size: 14px;
