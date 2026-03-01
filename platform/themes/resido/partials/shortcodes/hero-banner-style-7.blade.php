@@ -40,17 +40,17 @@
     <!-- Banner Content (works for both) -->
     <div style="
         position:absolute;
-        top:40px;
+        top:140px;
         left:40px;
         color:#fff;
         z-index:2;
-        max-width:600px;
+        max-width:50%;
     ">
-        <h1 style="margin-bottom:10px;">
-            {{ $title ?? 'Banner Title' }}
+        <h1 style="margin-bottom: 10px;font-size: 3.75rem;color:#fff;">
+            {{ $title }}
         </h1>
         <p>
-            {{ $description ?? 'Banner description text here.' }}
+            {{ $description }}
         </p>
     </div>
 
