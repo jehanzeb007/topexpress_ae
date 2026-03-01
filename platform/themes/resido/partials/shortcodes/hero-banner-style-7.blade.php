@@ -4,7 +4,7 @@
     $videoExtensions = ['mp4','webm','mov','avi','mkv'];
 @endphp
 
-<div class="hero-banner" style="height: 80vh; position: relative; overflow: hidden;">
+<div class="hero-banner" style="height: 85vh; position: relative; overflow: hidden;">
 
     @if(in_array($extension, $videoExtensions))
 
