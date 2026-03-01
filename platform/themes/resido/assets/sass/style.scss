@@ -125,8 +125,6 @@ body {
     margin: 0;
     overflow-x: hidden !important;
     font-weight: 400;
-    background: #121212 url('/bg-pattren.png') repeat;
-
 }
 
 .modal-open {
@@ -3470,7 +3468,7 @@ a.btn-outline-success:focus {
 [type="radio"]:checked + label,
 [type="radio"]:not(:checked) + label {
     position: relative;
-    padding-left: 28px;
+    padding-left: 16px;
     cursor: pointer;
     line-height: 20px;
     display: inline-block;

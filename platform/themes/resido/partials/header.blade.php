@@ -51,7 +51,7 @@
 
     {!! Theme::header() !!}
 </head>
-<body class="{{ theme_option('skin', 'blue') }}" @if (BaseHelper::siteLanguageDirection() == 'rtl') dir="rtl" @endif>
+<body class="{{ theme_option('skin', 'blue') }}" style="background: #121212 url('{{url('/bg-pattren.png')}}') repeat" @if (BaseHelper::siteLanguageDirection() == 'rtl') dir="rtl" @endif>
 <div id="alert-container"></div>
 
 @if (theme_option('preloader_enabled', 'no') == 'yes')
