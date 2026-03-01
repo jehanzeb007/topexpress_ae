@@ -114,7 +114,10 @@ i.req {
 * {
     outline: none;
 }
-
+html{
+    color: #ffffff;
+    background: #000000;
+}
 body {
     color: #ffffff;
     font-size: 16px;
@@ -3651,12 +3654,13 @@ a.btn-outline-success:focus {
     padding: 0.5rem 0.75rem;
     border: 1px solid #e0ecf5;
     background-clip: initial;
+    background: none;
 }
 
 .submit-form .form-control,
 .submit-page .form-control,
 .form-submit .form-control {
-    background: #f9fafc;
+    background: none;
     border: 1px solid #ebedf5;
     border-radius: 3px;
     color: #646e77;
@@ -10465,7 +10469,7 @@ span.mod-close {
 .shorting-list li a {
     width: 56px;
     height: 56px;
-    background: #ffffff;
+    background: rgba(23, 23, 23);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -10479,7 +10483,7 @@ span.mod-close {
 .shorting-list li a.focus {
     width: 56px;
     height: 56px;
-    background: rgba(25, 206, 109, 0.1);
+    background: rgba(23, 23, 23, 0.1);
     display: inline-flex;
     align-items: center;
     justify-content: center;

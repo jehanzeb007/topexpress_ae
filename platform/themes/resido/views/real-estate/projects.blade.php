@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <section class="bg-light">
+    <section class="bg-dark">
         <div class="container d-md-block">
             <div class="filter_search_opt">
                 <a href="javascript:void(0);" class="open_search_menu">{{ __('Search Project') }}<i

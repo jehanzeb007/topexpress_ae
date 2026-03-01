@@ -18,7 +18,7 @@
 
     <!-- ============================ Property Detail Start ================================== -->
 
-    <section class="gray-simple">
+    <section class="bg-dark">
         <div data-project-id="{{ $project->id }}"></div>
         <div class="container">
             <div class="row">
