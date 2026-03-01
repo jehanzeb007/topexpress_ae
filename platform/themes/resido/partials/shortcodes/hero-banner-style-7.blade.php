@@ -4,17 +4,57 @@
     $videoExtensions = ['mp4','webm','mov','avi','mkv'];
 @endphp
 
-@if(in_array($extension, $videoExtensions))
-    <div style="height: 80vh;position: relative;overflow: hidden;">
-        <video autoplay muted loop playsinline style="width: 100%;height: 100%;object-fit: cover;">
+<div style="height: 80vh; position: relative; overflow: hidden;">
+
+    @if(in_array($extension, $videoExtensions))
+
+        <!-- Video -->
+        <video autoplay muted loop playsinline
+               style="width: 100%; height: 100%; object-fit: cover;">
             <source src="{{ $fileUrl }}">
         </video>
+
+    @else
+
+        <!-- Image -->
+        <div style="
+            width:100%;
+            height:100%;
+            background-image: url('{{ $fileUrl }}');
+            background-size: cover;
+            background-position: center;
+        "></div>
+
+    @endif
+
+    <!-- Overlay (works for both) -->
+    <div style="
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background: rgba(0,0,0,0.3);
+    "></div>
+
+    <!-- Banner Content (works for both) -->
+    <div style="
+        position:absolute;
+        top:40px;
+        left:40px;
+        color:#fff;
+        z-index:2;
+        max-width:600px;
+    ">
+        <h1 style="margin-bottom:10px;">
+            {{ $title ?? 'Banner Title' }}
+        </h1>
+        <p>
+            {{ $description ?? 'Banner description text here.' }}
+        </p>
     </div>
-@else
-    <div class="hero-banner image-cover"
-         style="background-image: url('{{ $fileUrl }}');">
-    </div>
-@endif
+
+</div>
 
 <section>
     <div class="container">
