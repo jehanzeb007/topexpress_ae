@@ -4936,7 +4936,20 @@ ul:last-child {
     padding: 30px 40px 40px;
     box-shadow: 0 20px 30px rgba(0, 22, 84, 0.15);
 }
+.hero-content {
+    position: absolute;
+    top: 140px;
+    left: 180px;
+    color: #fff;
+    z-index: 2;
+    max-width: 50%;
+}
 
+.hero-title {
+    margin-bottom: 10px;
+    font-size: 3.75rem;
+    color: #fff;
+}
 .hero-search-wrap.hs-2 {
     background: rgba(255, 255, 255, 0.15);
     border-radius: 5px;
@@ -12941,6 +12954,20 @@ ul.packages-lists-list li {
         animation-duration: 0.5s;
         -webkit-animation-name: slideInDown;
         animation-name: slideInDown;
+    }
+    .hero-content {
+        top: 80px;
+        left: 20px;
+        right: 20px;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-desc {
+        font-size: 14px;
     }
 }
 
