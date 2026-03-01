@@ -2,9 +2,9 @@
     "id": "thesky9/resido",
     "name": "Resido - Real Estate",
     "namespace": "Theme\\Resido\\",
-    "description": "Real Estate theme",
-    "author": "TheSky9 Team",
-    "version": "0.0.5",
+    "description": "Real Estate",
+    "author": "Devandesign Team",
+    "version": "0.0.6",
     "required_plugins": [
         "blog",
         "contact",
