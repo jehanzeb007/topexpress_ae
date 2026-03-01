@@ -12,7 +12,7 @@
             <div class="form-check form-check-inline">
                 <input class="btn-check d-none" type="radio" name="type" id="cp-{{ $key }}" value="{{ $key }}"
                        @if ($type_choice == $key) checked @endif autocomplete="off">
-                <label class="btn btn-outline-success" for="cp-{{ $key }}">{{ $type }}</label>
+                <label class="btn btn-outline-dark" for="cp-{{ $key }}">{{ $type }}</label>
             </div>
         @endforeach
     </div>

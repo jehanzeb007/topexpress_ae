@@ -167,6 +167,7 @@ app()->booted(function () {
                     'goodred-skin' => __('Goodred skin'),
                     'goodgreen-skin' => __('Goodgreen skin'),
                     'blue2-skin' => __('Blue 2 skin'),
+                    'dark-skin' => __('Dark skin'),
                 ],
                 'value' => 'yes',
                 'options' => [

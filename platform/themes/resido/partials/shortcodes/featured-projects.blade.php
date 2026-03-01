@@ -1,4 +1,4 @@
-<section class="bg-light">
+<section class="bg-dark" style="background: #121212 url('pattern2.jpg') repeat fixed;">
     <div class="container">
 
         <div class="row justify-content-center">

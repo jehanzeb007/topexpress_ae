@@ -82,7 +82,7 @@
     <div class="clearfix"></div>
 @else
     <!-- ============================ All Property ================================== -->
-    <section class="gray">
+    <section class="bg-dark">
         <div class="container">
 
             <div class="row">

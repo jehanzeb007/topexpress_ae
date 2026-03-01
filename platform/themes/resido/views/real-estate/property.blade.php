@@ -18,7 +18,7 @@
 {!! Theme::partial('real-estate.properties.headers.' . $headerLayout, compact('property', 'propertyLabel')) !!}
 
 <!-- ============================ Property Detail Start ================================== -->
-<section class="property-detail gray-simple">
+<section class="property-detail bg-dark">
     <div data-property-id="{{ $property->id }}"></div>
     <div class="container">
         <div class="row">
