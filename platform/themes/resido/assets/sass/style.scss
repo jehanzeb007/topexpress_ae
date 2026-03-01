@@ -12943,6 +12943,9 @@ ul.packages-lists-list li {
 }
 
 @media (min-width: 768px) {
+    .hero-title{
+        font-size: 35px;
+    }
     form.search-big-form.search-shadow .form-group,
     form.search-form.search-shadow .form-group {
         margin-bottom: 0;
@@ -12966,6 +12969,7 @@ ul.packages-lists-list li {
         -webkit-animation-name: slideInDown;
         animation-name: slideInDown;
     }
+
     .hero-content {
         top: 80px;
         left: 20px;
@@ -13387,6 +13391,9 @@ ul.packages-lists-list li {
 }
 
 @media (max-width: 767px) {
+    .hero-title, .hero-desc{
+        display:none;
+    }
     .call-to-act {
         display: block;
         text-align: center;

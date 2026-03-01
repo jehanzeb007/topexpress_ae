@@ -107,7 +107,6 @@ body {
   margin: 0;
   overflow-x: hidden !important;
   font-weight: 400;
-  background: #121212 url("/bg-pattren.png") repeat;
 }
 
 .modal-open {
@@ -117,7 +116,7 @@ body {
 html {
   position: relative;
   min-height: 100%;
-  background: #ffffff;
+  background: #000000;
 }
 
 a {
@@ -3261,7 +3260,7 @@ a.btn-outline-success:focus {
 [type=radio]:checked + label,
 [type=radio]:not(:checked) + label {
   position: relative;
-  padding-left: 28px;
+  padding-left: 16px;
   cursor: pointer;
   line-height: 20px;
   display: inline-block;
@@ -3452,7 +3451,6 @@ a.btn-outline-success:focus {
 }
 
 .form-control.simple {
-  background: #f2f3f5;
   border-color: #f2f3f5;
   border-radius: 4px;
 }
@@ -7311,7 +7309,6 @@ span.tag_t {
 
 .form-control:focus {
   box-shadow: none;
-  color: #fff !important;
 }
 
 .caption-wrap-content h2,
@@ -12439,6 +12436,9 @@ ul.packages-lists-list li {
   }
 }
 @media (min-width: 768px) {
+  .hero-title {
+    font-size: 35px;
+  }
   form.search-big-form.search-shadow .form-group,
   form.search-form.search-shadow .form-group {
     margin-bottom: 0;
@@ -12844,6 +12844,9 @@ ul.packages-lists-list li {
   }
 }
 @media (max-width: 767px) {
+  .hero-title, .hero-desc {
+    display: none;
+  }
   .call-to-act {
     display: block;
     text-align: center;
