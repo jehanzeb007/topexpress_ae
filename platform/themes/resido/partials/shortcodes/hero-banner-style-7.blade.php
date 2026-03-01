@@ -58,14 +58,6 @@
 
 <section>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-7 col-md-10 text-center">
-                <div class="sec-heading center mb-4">
-                    <h2>{!! clean($title) !!}</h2>
-                    <p class="lead-i">{!! clean($description) !!}</p>
-                </div>
-            </div>
-        </div>
         <form action="{{ route('public.properties') }}" method="GET" id="frmhomesearch">
             <div class="hero-search-content">
                 <div class="row">
