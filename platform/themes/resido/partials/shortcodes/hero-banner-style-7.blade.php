@@ -41,7 +41,7 @@
     <div style="
         position:absolute;
         top:140px;
-        left:40px;
+        left:180px;
         color:#fff;
         z-index:2;
         max-width:50%;
