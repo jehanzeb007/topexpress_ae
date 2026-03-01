@@ -4936,6 +4936,20 @@ ul:last-child {
     padding: 30px 40px 40px;
     box-shadow: 0 20px 30px rgba(0, 22, 84, 0.15);
 }
+.hero-form-wrapper {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 3;
+}
+
+.form-overlay-box {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
 .hero-content {
     position: absolute;
     top: 140px;
@@ -12968,6 +12982,13 @@ ul.packages-lists-list li {
 
     .hero-desc {
         font-size: 14px;
+    }
+    .hero-form-wrapper {
+        bottom: 20px;
+    }
+
+    .form-overlay-box {
+        padding: 15px;
     }
 }
 
