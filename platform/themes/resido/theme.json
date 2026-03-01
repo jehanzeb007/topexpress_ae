@@ -4,7 +4,7 @@
     "namespace": "Theme\\Resido\\",
     "description": "Real Estate",
     "author": "Devandesign Team",
-    "version": "0.0.26",
+    "version": "0.0.27",
     "required_plugins": [
         "blog",
         "contact",
