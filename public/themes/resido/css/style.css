@@ -107,7 +107,7 @@ body {
   margin: 0;
   overflow-x: hidden !important;
   font-weight: 400;
-  background: #121212 url("/bg-pattren.jpg") repeat;
+  background: #121212 url("/bg-pattren.png") repeat;
 }
 
 .modal-open {
@@ -8045,7 +8045,6 @@ ul.fr-grid-social li a {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  background: #2540a2;
 }
 
 .page-title .ipt-title {
