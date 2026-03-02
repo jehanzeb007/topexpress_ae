@@ -3960,12 +3960,13 @@ nav a:hover {
     top: 0;
     left: -400px;
     position: fixed;
-    background-color: #fff;
+    background-color: rgb(23 23 23);
     z-index: 20000;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     transition-duration: 0.8s;
     transition-timing-function: ease;
+    opacity:0.9;
 }
 
 .navigation-portrait .nav-menus-wrapper.nav-menus-wrapper-right {
@@ -4814,7 +4815,7 @@ nav a {
     max-width: 100%;
     position: relative;
     top: 2px;
-    max-height: 75px;
+    max-height: 75px !important;
 }
 
 .nav-menu.nav-menu-social > li > a > .fas {
