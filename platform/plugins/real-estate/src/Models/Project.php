@@ -39,6 +39,7 @@ class Project extends BaseModel
         'price_from',
         'price_to',
         'currency_id',
+        'neighbourhood_id',
         'city_id',
         'state_id',
         'country_id',

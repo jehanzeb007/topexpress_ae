@@ -39,6 +39,7 @@ return new class () extends Migration {
                 $table->decimal('price_to', 15, 0)->nullable();
                 $table->integer('currency_id')->unsigned()->nullable();
                 $table->integer('city_id')->unsigned()->nullable();
+                $table->integer('neighbourhood_id')->unsigned()->nullable();
                 $table->integer('country_id')->unsigned()->nullable();
                 $table->integer('state_id')->unsigned()->nullable();
                 $table->string('status', 60)->default('selling');
