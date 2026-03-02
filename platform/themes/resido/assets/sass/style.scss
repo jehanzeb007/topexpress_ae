@@ -3881,7 +3881,7 @@ ul {
 }
 
 .nav-brand {
-    padding: 17px 15px;
+    padding: 0px 15px;
     font-size: 24px;
     margin-right: 1rem;
     text-decoration: none !important;
@@ -4811,9 +4811,10 @@ nav a {
 }
 
 .nav-brand img {
-    max-width: 150px;
+    max-width: 100%;
     position: relative;
     top: 2px;
+    max-height: 75px;
 }
 
 .nav-menu.nav-menu-social > li > a > .fas {
