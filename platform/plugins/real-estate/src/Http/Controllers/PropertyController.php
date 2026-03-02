@@ -104,7 +104,6 @@ class PropertyController extends BaseController
         SaveFacilitiesService $saveFacilitiesService
     ) {
         $property = Property::query()->findOrFail($id);
-
         PropertyForm::createFromModel($property)
             ->setRequest($request)
             ->saving(function (PropertyForm $form) use ($propertyCategoryService, $saveFacilitiesService) {

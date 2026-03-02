@@ -122,6 +122,7 @@ class Location
                 'country' => 'country_id',
                 'state' => 'state_id',
                 'city' => 'city_id',
+                'neighbourhood' => 'neighbourhood_id',
             ], $keys)
         );
 

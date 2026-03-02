@@ -152,6 +152,7 @@ class LocationServiceProvider extends ServiceProvider
                             'country' => 'country_id',
                             'state' => 'state_id',
                             'city' => 'city_id',
+                            'neighbourhood' => 'neighbourhood_id',
                         ], $keys)
                     );
                 }
@@ -170,10 +171,12 @@ class LocationServiceProvider extends ServiceProvider
                 if ($columnName = Arr::get($keys, 'city')) {
                     $this->foreignId($columnName)->nullable();
                 }
+                if ($columnName = Arr::get($keys, 'neighbourhood')) {
+                    $this->foreignId($columnName)->nullable();
+                }
 
                 return true;
             });
-
             foreach (Location::getSupported() as $item => $keys) {
                 if (! class_exists($item)) {
                     continue;
@@ -210,7 +213,27 @@ class LocationServiceProvider extends ServiceProvider
                         return $this->state->name;
                     });
                 }
+                if ($foreignKey = Arr::get($keys, 'neighbourhood')) {
+                    /**
+                     * @var BaseModel $item
+                     */
+                    $item::resolveRelationUsing('neighbourhood', function ($model) use ($foreignKey) {
+                        return $model->belongsTo(Neighbourhood::class, $foreignKey)->withDefault();
+                    });
 
+                    MacroableModels::addMacro($item, 'getNeighbourhoodNameAttribute', function () {
+                        /**
+                         * @var BaseModel $this
+                         */
+                        return $this->neighbourhood->name;
+                    });
+                }
+                MacroableModels::addMacro($item, 'getNeighbourhoodNameAttribute', function () {
+                    /**
+                     * @var BaseModel $this
+                     */
+                    return $this->neighbourhood->name;
+                });
                 if ($foreignKey = Arr::get($keys, 'city')) {
                     /**
                      * @var BaseModel $item
@@ -235,6 +258,16 @@ class LocationServiceProvider extends ServiceProvider
 
                     return implode(', ', array_filter($addresses));
                 });
+                MacroableModels::addMacro($item, 'getListAddressAttribute', function () {
+                    /**
+                     * @var BaseModel $this
+                     */
+                    $addresses = [$this->neighbourhood_name, $this->state_name, $this->country_name];
+
+                    return implode(', ', array_filter($addresses));
+                });
+
+
             }
         });
 

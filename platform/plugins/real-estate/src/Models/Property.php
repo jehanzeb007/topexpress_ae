@@ -41,6 +41,7 @@ class Property extends BaseModel
         'status',
         'is_featured',
         'currency_id',
+        'neighbourhood_id',
         'city_id',
         'state_id',
         'country_id',
@@ -154,14 +155,7 @@ class Property extends BaseModel
         return $this->belongsToMany(Category::class, 're_property_categories');
     }
 
-    protected function cityName(): Attribute
-    {
-        return Attribute::make(
-            get: function () {
-                return ($this->city->name ? $this->city->name . ', ' : null) . $this->state->name;
-            },
-        );
-    }
+
 
     protected function typeHtml(): Attribute
     {

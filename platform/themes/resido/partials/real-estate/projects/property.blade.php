@@ -97,7 +97,7 @@
             <div class="foot-location d-flex">
                 <img src="{{ Theme::asset()->url('img/pin.svg') }}" width="18"
                      alt="{!! clean($property->city_name ) !!}"/>
-                {!! clean($property->city_name ) !!}
+                {!! clean($property->list_address ) !!}
             </div>
         </div>
         <div class="footer-flex">
