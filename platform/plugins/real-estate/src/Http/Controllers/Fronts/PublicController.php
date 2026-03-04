@@ -344,7 +344,7 @@ class PublicController extends BaseController
 
         $perPage = $request->integer('per_page') ?: (int) theme_option('number_of_properties_per_page', 12);
 
-        $request->merge(['city' => $slug]);
+        $request->merge(['neighbourhood' => $slug]);
 
         $properties = RealEstateHelper::getPropertiesFilter($perPage, RealEstateHelper::getReviewExtraData());
 

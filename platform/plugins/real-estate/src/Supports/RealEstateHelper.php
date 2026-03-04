@@ -211,6 +211,7 @@ class RealEstateHelper
             'location' => 'nullable|string',
             'city_id' => 'nullable|numeric',
             'city' => 'nullable|string',
+            'neighbourhood' => 'nullable|string',
             'state' => 'nullable|string',
             'state_id' => 'nullable|numeric',
             'type' => 'nullable|string',
