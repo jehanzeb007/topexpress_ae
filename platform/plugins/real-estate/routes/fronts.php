@@ -39,6 +39,9 @@ if (defined('THEME_MODULE_SCREEN_NAME')) {
             Route::match(['POST', 'GET'], $propertiesPrefix . '/' . $cityPrefix . '/{slug}', 'PublicController@getPropertiesByCity')
                 ->name('public.properties-by-city');
 
+            Route::match(['POST', 'GET'], $propertiesPrefix . '/' . $neighbourhoodPrefix . '/{slug}', 'PublicController@getPropertiesByNeighbourhood')
+                ->name('public.properties-by-neighbourhood');
+
             Route::match(['POST', 'GET'], $projectsPrefix . '/' . $statePrefix . '/{slug}', 'PublicController@getProjectsByState')
                 ->name('public.projects-by-state');
 
