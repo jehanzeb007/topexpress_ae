@@ -7,6 +7,7 @@ use Botble\Base\Http\Controllers\BaseController;
 use Botble\Base\Facades\EmailHandler;
 use Botble\Base\Supports\RepositoryHelper;
 use Botble\Location\Models\City;
+use Botble\Location\Models\Neighbourhood;
 use Botble\Location\Models\State;
 use Botble\Media\Facades\RvMedia;
 use Botble\RealEstate\Facades\RealEstateHelper;
@@ -303,6 +304,43 @@ class PublicController extends BaseController
 
         Theme::breadcrumb()
             ->add(SeoHelper::getTitle(), route('public.properties-by-city', $city->slug));
+
+        $perPage = $request->integer('per_page') ?: (int) theme_option('number_of_properties_per_page', 12);
+
+        $request->merge(['city' => $slug]);
+
+        $properties = RealEstateHelper::getPropertiesFilter($perPage, RealEstateHelper::getReviewExtraData());
+
+        if ($request->ajax()) {
+            if ($request->input('minimal')) {
+                return $this
+                    ->httpResponse()
+                    ->setData(Theme::partial('search-suggestion', ['items' => $properties]));
+            }
+
+            return $this
+                ->httpResponse()
+                ->setData(Theme::partial('real-estate.properties.items', ['properties' => $properties]));
+        }
+
+        return Theme::scope('real-estate.properties', [
+            'properties' => $properties,
+            'ajaxUrl' => route('public.properties-by-city', $city->slug),
+            'actionUrl' => route('public.properties-by-city', $city->slug),
+        ], 'plugins/real-estate::themes.properties')
+            ->render();
+    }
+
+    public function getPropertiesByNeighbourhood(string $slug, Request $request)
+    {
+        $neighbourhood = Neighbourhood::query()->wherePublished()->where('slug', $slug)->firstOrFail();
+
+        SeoHelper::setTitle(__('Properties in :neighbourhood', ['neighbourhood' => $neighbourhood->name]));
+
+        do_action(BASE_ACTION_PUBLIC_RENDER_SINGLE, CITY_MODULE_SCREEN_NAME, $neighbourhood);
+
+        Theme::breadcrumb()
+            ->add(SeoHelper::getTitle(), route('public.properties-by-neighbourhood', $neighbourhood->slug));
 
         $perPage = $request->integer('per_page') ?: (int) theme_option('number_of_properties_per_page', 12);
 
