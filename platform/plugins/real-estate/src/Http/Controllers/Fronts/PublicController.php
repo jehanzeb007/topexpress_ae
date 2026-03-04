@@ -362,8 +362,8 @@ class PublicController extends BaseController
 
         return Theme::scope('real-estate.properties', [
             'properties' => $properties,
-            'ajaxUrl' => route('public.properties-by-city', $city->slug),
-            'actionUrl' => route('public.properties-by-city', $city->slug),
+            'ajaxUrl' => route('public.properties-by-neighbourhood', $neighbourhood->slug),
+            'actionUrl' => route('public.properties-by-neighbourhood', $neighbourhood->slug),
         ], 'plugins/real-estate::themes.properties')
             ->render();
     }
