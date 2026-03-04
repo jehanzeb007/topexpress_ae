@@ -2,6 +2,7 @@
 
 use Botble\Base\Http\Middleware\RequiresJsonRequestMiddleware;
 use Botble\Location\Models\City;
+use Botble\Location\Models\Neighbourhood;
 use Botble\Location\Models\State;
 use Botble\RealEstate\Facades\RealEstateHelper;
 use Botble\RealEstate\Http\Controllers\CustomFieldController;
@@ -30,6 +31,8 @@ if (defined('THEME_MODULE_SCREEN_NAME')) {
                 ->name('public.properties');
 
             $cityPrefix = SlugHelper::getPrefix(City::class, 'city') ?: 'city';
+
+            $neighbourhoodPrefix = SlugHelper::getPrefix(Neighbourhood::class, 'neighbourhood') ?: 'neighbourhood';
 
             $statePrefix = SlugHelper::getPrefix(State::class, 'state') ?: 'state';
 
