@@ -19,7 +19,7 @@
                                     <div class="st-author-box">
                                         <div class="st-author-thumb">
                                             <div class="quotes bg-blue"><i class="ti-quote-right"></i></div>
-                                            <img src="{{ $item->image }}" class="img-fluid"
+                                            <img src="{{ url('storage/'.$item->image) }}" class="img-fluid"
                                                 alt="{{ $item->name }}" />
                                         </div>
                                     </div>
