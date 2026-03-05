@@ -12,11 +12,11 @@ use Illuminate\Support\HtmlString;
  */
 class PropertyTypeEnum extends Enum
 {
-    public const SALE = '';
-
-    public const RENT = '';
-
     public const OFFPLAN = 'offplan';
+
+    public const SALE = 'sale';
+
+    public const RENT = 'rent';
 
     public static $langPath = 'plugins/real-estate::property.types';
 
