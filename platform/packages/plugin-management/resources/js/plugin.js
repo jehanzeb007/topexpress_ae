@@ -158,6 +158,7 @@ class PluginManagement {
     }
 
     checkUpdate() {
+        return true;
         $httpClient
             .make()
             .post($('button[data-check-update]').data('check-update-url'))
