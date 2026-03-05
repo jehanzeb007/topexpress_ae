@@ -68,6 +68,7 @@ class PropertyRepository extends RepositoriesAbstract implements PropertyInterfa
             'category_id' => null,
             'author_id' => null,
             'city_id' => null,
+            'neighbourhood_id' => null,
             'city' => null,
             'state' => null,
             'state_id' => null,
@@ -218,6 +219,12 @@ class PropertyRepository extends RepositoriesAbstract implements PropertyInterfa
         if ($filters['state'] !== null) {
             $this->model = $this->model->whereHas('state', function ($query) use ($filters) {
                 $query->where('slug', $filters['state']);
+            });
+        }
+
+        if ($filters['neighbourhood'] !== null) {
+            $this->model = $this->model->whereHas('neighbourhood', function ($query) use ($filters) {
+                $query->where('slug', $filters['neighbourhood']);
             });
         }
 

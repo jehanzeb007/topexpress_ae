@@ -212,6 +212,7 @@ class RealEstateHelper
             'city_id' => 'nullable|numeric',
             'city' => 'nullable|string',
             'neighbourhood' => 'nullable|string',
+            'neighbourhood_id' => 'nullable|numeric',
             'state' => 'nullable|string',
             'state_id' => 'nullable|numeric',
             'type' => 'nullable|string',
@@ -231,7 +232,7 @@ class RealEstateHelper
         ]));
 
         $filters['keyword'] = $request->input('k');
-
+        //echo '<pre>';print_r($filters);exit;
         $params = array_merge([
             'paginate' => [
                 'per_page' => $perPage,

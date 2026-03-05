@@ -337,17 +337,18 @@ class PublicController extends BaseController
 
         SeoHelper::setTitle(__('Properties in :neighbourhood', ['neighbourhood' => $neighbourhood->name]));
 
-        do_action(BASE_ACTION_PUBLIC_RENDER_SINGLE, CITY_MODULE_SCREEN_NAME, $neighbourhood);
+        do_action(BASE_ACTION_PUBLIC_RENDER_SINGLE, NEIGHBOURHOOD_MODULE_SCREEN_NAME, $neighbourhood);
 
         Theme::breadcrumb()
             ->add(SeoHelper::getTitle(), route('public.properties-by-neighbourhood', $neighbourhood->slug));
 
         $perPage = $request->integer('per_page') ?: (int) theme_option('number_of_properties_per_page', 12);
 
+        //$request->merge(['neighbourhood_id' => $neighbourhood->id]);
         $request->merge(['neighbourhood' => $slug]);
 
         $properties = RealEstateHelper::getPropertiesFilter($perPage, RealEstateHelper::getReviewExtraData());
-
+        //echo '<pre>';print_r($properties);exit;
         if ($request->ajax()) {
             if ($request->input('minimal')) {
                 return $this
