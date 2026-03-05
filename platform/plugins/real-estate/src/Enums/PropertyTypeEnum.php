@@ -12,9 +12,9 @@ use Illuminate\Support\HtmlString;
  */
 class PropertyTypeEnum extends Enum
 {
-    public const SALE = 'sale';
+    //public const SALE = 'sale';
 
-    public const RENT = 'rent';
+    //public const RENT = 'rent';
 
     public const OFFPLAN = 'offplan';
 
