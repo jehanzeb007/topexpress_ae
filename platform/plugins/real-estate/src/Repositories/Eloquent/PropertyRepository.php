@@ -69,6 +69,7 @@ class PropertyRepository extends RepositoriesAbstract implements PropertyInterfa
             'author_id' => null,
             'city_id' => null,
             'neighbourhood_id' => null,
+            'neighbourhood' => null,
             'city' => null,
             'state' => null,
             'state_id' => null,
