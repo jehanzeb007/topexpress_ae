@@ -3649,8 +3649,11 @@ a.btn-outline-success:focus {
     border: 1px solid #e0ecf5;
     background-clip: initial;
     background: none;
+    color: #707e9c !important;
 }
-
+.form-control:focus{
+    color: #707e9c !important;
+}
 .submit-form .form-control,
 .submit-page .form-control,
 .form-submit .form-control {
@@ -4951,7 +4954,7 @@ ul:last-child {
 }
 
 .form-overlay-box {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 1);
     padding: 20px;
     border-radius: 10px;
 }
@@ -8963,6 +8966,44 @@ span.remove-from-compare {
     margin-left: 0.8125em;
     position: relative;
     bottom: 6px;
+}
+
+.border-animate{
+    position: relative;
+    padding: 1px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.border-animate::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+            #00f7ff,
+            #00ff85,
+            #bfff00,
+            #00ff85,
+            #00f7ff
+    );
+    animation: rotateBorder 6s linear infinite;
+}
+
+.border-content{
+    position: relative;
+    background: #111; /* dark panel */
+    border-radius: 12px;
+    padding: 25px;
+    z-index: 2;
+}
+
+@keyframes rotateBorder{
+    100%{
+        transform: rotate(360deg);
+    }
 }
 
 @media (min-width: 990px) {

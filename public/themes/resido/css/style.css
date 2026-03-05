@@ -3433,6 +3433,11 @@ a.btn-outline-success:focus {
   border: 1px solid #e0ecf5;
   background-clip: initial;
   background: none;
+  color: #707e9c !important;
+}
+
+.form-control:focus {
+  color: #707e9c !important;
 }
 
 .submit-form .form-control,
@@ -3650,7 +3655,7 @@ ul {
 }
 
 .nav-brand {
-  padding: 17px 15px;
+  padding: 0px 15px;
   font-size: 24px;
   margin-right: 1rem;
   text-decoration: none !important;
@@ -3729,12 +3734,13 @@ nav a:hover {
   top: 0;
   left: -400px;
   position: fixed;
-  background-color: #fff;
+  background-color: rgb(23, 23, 23);
   z-index: 20000;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   transition-duration: 0.8s;
   transition-timing-function: ease;
+  opacity: 0.9;
 }
 
 .navigation-portrait .nav-menus-wrapper.nav-menus-wrapper-right {
@@ -4514,9 +4520,10 @@ nav a {
 }
 
 .nav-brand img {
-  max-width: 150px;
+  max-width: 100%;
   position: relative;
   top: 2px;
+  max-height: 75px !important;
 }
 
 .nav-menu.nav-menu-social > li > a > .fas {
@@ -4653,7 +4660,7 @@ ul:last-child {
 }
 
 .form-overlay-box {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgb(0, 0, 0);
   padding: 20px;
   border-radius: 10px;
 }
@@ -5871,7 +5878,7 @@ form.search-form.search-shadow {
 label {
   font-size: 14px;
   font-weight: 600;
-  color: #455892;
+  color: #fff;
   font-family: var(--font-heading);
 }
 
@@ -5927,9 +5934,9 @@ label {
 
 .neighbourhood-property-thumb img {
   width: 100%;
-  height: auto;
   display: block;
   border-radius: 8px;
+  min-height: 74px;
 }
 
 .neighbourhood-property-content {
@@ -7203,12 +7210,13 @@ span.tag_t {
 .footer-flex .prt-view {
   padding: 4px 18px;
   color: #ffffff !important;
-  background: #0fca98;
+  background: rgb(23, 23, 23);
   border-radius: 50px;
   height: 30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #616e96;
 }
 
 .author-box {
@@ -8596,6 +8604,37 @@ span.remove-from-compare {
   bottom: 6px;
 }
 
+.border-animate {
+  position: relative;
+  padding: 3px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.border-animate::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(#00f7ff, #00ff85, #bfff00, #00ff85, #00f7ff);
+  animation: rotateBorder 6s linear infinite;
+}
+
+.border-content {
+  position: relative;
+  background: #111; /* dark panel */
+  border-radius: 12px;
+  padding: 25px;
+  z-index: 2;
+}
+
+@keyframes rotateBorder {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @media (min-width: 990px) {
   .pricing-5 ul li {
     height: 4.875em;
