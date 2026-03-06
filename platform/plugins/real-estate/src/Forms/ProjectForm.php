@@ -263,7 +263,16 @@ class ProjectForm extends FormAbstract
             ->add('date_sell', 'datePicker', [
                 'label' => trans('plugins/real-estate::project.form.date_sell'),
             ])
-            ->setBreakFieldPoint('status');
+            ->setBreakFieldPoint('status')->add('author_id', 'autocomplete', [
+                'label' => trans('plugins/real-estate::property.account'),
+                'attr' => [
+                    'id' => 'author_id',
+                    'data-url' => route('account.list'),
+                ],
+                'choices' => $this->getModel()->author_id
+                    ? [$this->model->author->id => $this->model->author->name]
+                    : ['' => trans('plugins/real-estate::property.select_account')],
+            ])
 
         if (RealEstateHelper::isEnabledCustomFields()) {
             $this->addMetaBoxes([
