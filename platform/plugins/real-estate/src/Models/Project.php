@@ -84,7 +84,7 @@ class Project extends BaseModel
 
     public function author(): MorphTo
     {
-        return $this->morphTo();
+        return $this->morphTo()->withDefault();
     }
 
     /**

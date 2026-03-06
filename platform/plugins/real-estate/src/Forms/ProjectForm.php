@@ -263,7 +263,8 @@ class ProjectForm extends FormAbstract
             ->add('date_sell', 'datePicker', [
                 'label' => trans('plugins/real-estate::project.form.date_sell'),
             ])
-            ->setBreakFieldPoint('status')->add('author_id', 'autocomplete', [
+            ->setBreakFieldPoint('status')
+            ->add('author_id', 'autocomplete', [
                 'label' => trans('plugins/real-estate::property.account'),
                 'required' => true,
                 'attr' => [

@@ -19,6 +19,7 @@ class ProjectRequest extends Request
             'number_flat' => 'numeric|min:0|max:100000|nullable',
             'price_from' => 'numeric|min:0|nullable',
             'price_to' => 'numeric|min:0|nullable',
+            'author_id' => 'required',
             'latitude' => ['max:20', 'nullable', 'regex:/^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$/'],
             'longitude' => [
                 'max:20',

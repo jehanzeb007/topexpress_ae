@@ -8,6 +8,7 @@ use Botble\Base\Events\UpdatedContentEvent;
 use Botble\Base\Http\Actions\DeleteResourceAction;
 use Botble\RealEstate\Facades\RealEstateHelper;
 use Botble\RealEstate\Forms\ProjectForm;
+use Botble\RealEstate\Models\Account;
 use Botble\RealEstate\Http\Requests\ProjectRequest;
 use Botble\RealEstate\Models\CustomFieldValue;
 use Botble\RealEstate\Models\Project;
@@ -47,7 +48,10 @@ class ProjectController extends BaseController
         StoreProjectCategoryService $projectCategoryService,
         SaveFacilitiesService $saveFacilitiesService
     ) {
-        $request->merge(['images' => array_filter($request->input('images', []))]);
+        $request->merge([
+            'images' => array_filter($request->input('images', [])),
+            'author_type' => Account::class,
+        ]);
 
         $project = Project::query()->create($request->input());
 
@@ -89,7 +93,10 @@ class ProjectController extends BaseController
     ) {
         $project = Project::query()->findOrFail($id);
 
-        $request->merge(['images' => array_filter($request->input('images', []))]);
+        $request->merge([
+            'images' => array_filter($request->input('images', [])),
+            'author_type' => Account::class,
+        ]);
 
         $project->fill($request->input());
         $project->save();
