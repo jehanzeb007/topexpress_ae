@@ -265,6 +265,7 @@ class ProjectForm extends FormAbstract
             ])
             ->setBreakFieldPoint('status')->add('author_id', 'autocomplete', [
                 'label' => trans('plugins/real-estate::property.account'),
+                'required' => true,
                 'attr' => [
                     'id' => 'author_id',
                     'data-url' => route('account.list'),
@@ -272,7 +273,7 @@ class ProjectForm extends FormAbstract
                 'choices' => $this->getModel()->author_id
                     ? [$this->model->author->id => $this->model->author->name]
                     : ['' => trans('plugins/real-estate::property.select_account')],
-            ])
+            ]);
 
         if (RealEstateHelper::isEnabledCustomFields()) {
             $this->addMetaBoxes([
