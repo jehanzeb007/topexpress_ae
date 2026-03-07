@@ -110,21 +110,21 @@ class LocationServiceProvider extends ServiceProvider
                 ])
                 ->registerItem([
                     'id' => 'cms-plugins-neighbourhood',
-                    'priority' => 2,
+                    'priority' => 3,
                     'parent_id' => 'cms-plugins-location',
                     'name' => 'plugins/location::neighbourhood.name',
                     'route' => 'neighbourhood.index',
                 ])
                 ->registerItem([
                     'id' => 'cms-plugins-location-bulk-import',
-                    'priority' => 3,
+                    'priority' => 4,
                     'parent_id' => 'cms-plugins-location',
                     'name' => 'plugins/location::bulk-import.name',
                     'route' => 'location.bulk-import.index',
                 ])
                 ->registerItem([
                     'id' => 'cms-plugins-location-export',
-                    'priority' => 4,
+                    'priority' => 5,
                     'parent_id' => 'cms-plugins-location',
                     'name' => 'plugins/location::export.name',
                     'route' => 'location.export.index',
