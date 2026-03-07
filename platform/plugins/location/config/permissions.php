@@ -67,6 +67,28 @@ return [
         'flag' => 'city.destroy',
         'parent_flag' => 'city.index',
     ],
+
+    [
+        'name' => 'Neighbourhoods',
+        'flag' => 'neighbourhood.index',
+        'parent_flag' => 'plugin.location',
+    ],
+    [
+        'name' => 'Create',
+        'flag' => 'neighbourhood.create',
+        'parent_flag' => 'neighbourhood.index',
+    ],
+    [
+        'name' => 'Edit',
+        'flag' => 'neighbourhood.edit',
+        'parent_flag' => 'neighbourhood.index',
+    ],
+    [
+        'name' => 'Delete',
+        'flag' => 'neighbourhood.destroy',
+        'parent_flag' => 'neighbourhood.index',
+    ],
+
     [
         'name' => 'Import',
         'flag' => 'location.bulk-import.index',
